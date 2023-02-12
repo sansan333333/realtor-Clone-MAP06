@@ -23,7 +23,7 @@ class TitlePreviewViewController: UIViewController {
     private let favouriteIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(systemName: "heart")
+//        imageView.image = UIImage(systemName: "heart")
         return imageView
     }()
     
@@ -34,6 +34,19 @@ class TitlePreviewViewController: UIViewController {
         return imageView
     }()
     
+    private let FavourtieLable: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 22, weight: .light)
+        return label
+    }()
+    
+    private let shareLable: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 22, weight: .light)
+        return label
+    }()
 //    private let priceLabel: UILabel = {
 //
 //        let label = UILabel()
@@ -135,6 +148,8 @@ class TitlePreviewViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(propertyImage)
         view.addSubview(favouriteIcon)
+//        view.addSubview(FavourtieLable)
+//        view.addSubview(shareLable)
         view.addSubview(shareIcon)
 //        view.addSubview(priceLabel)
 //        view.addSubview(numberBedroomLabel)
@@ -161,13 +176,25 @@ class TitlePreviewViewController: UIViewController {
         let favouriteIconConstrains = [
             favouriteIcon.topAnchor.constraint(equalTo: propertyImage.bottomAnchor, constant: 10),
             favouriteIcon.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            favouriteIcon.heightAnchor.constraint(equalToConstant: 30)
+            favouriteIcon.heightAnchor.constraint(equalToConstant: 30),
+            favouriteIcon.widthAnchor.constraint(equalToConstant: 30)
         ]
+        
+//        let favourtieLableConstrains = [
+//            FavourtieLable.topAnchor.constraint(equalTo: propertyImage.bottomAnchor, constant: 10),
+//            FavourtieLable.leadingAnchor.constraint(equalTo: favouriteIcon.trailingAnchor, constant: 10),
+//        ]
+        
+//        let shareLableConstrains = [
+//            FavourtieLable.topAnchor.constraint(equalTo: propertyImage.bottomAnchor, constant: 10),
+//            FavourtieLable.leadingAnchor.constraint(equalTo: shareIcon.trailingAnchor, constant: 10),
+//        ]
         
         let shareIconConstrains = [
             shareIcon.topAnchor.constraint(equalTo: propertyImage.bottomAnchor, constant: 10),
             shareIcon.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            favouriteIcon.heightAnchor.constraint(equalToConstant: 30)
+            shareIcon.heightAnchor.constraint(equalToConstant: 30),
+            shareIcon.widthAnchor.constraint(equalToConstant: 30)
         ]
         
         
@@ -176,6 +203,8 @@ class TitlePreviewViewController: UIViewController {
         
         NSLayoutConstraint.activate(propertyImageConstrains)
         NSLayoutConstraint.activate(favouriteIconConstrains)
+//        NSLayoutConstraint.activate(favourtieLableConstrains)
+//        NSLayoutConstraint.activate(shareLableConstrains)
         NSLayoutConstraint.activate(shareIconConstrains)
     }
     
@@ -184,7 +213,10 @@ class TitlePreviewViewController: UIViewController {
         guard let url = URL(string: model.propertyImage) else { return }
         propertyImage.sd_setImage(with: url)
         
-        favouriteIcon.image = UIImage(named: model.favouriteIcon)
-        shareIcon.image = UIImage(named: model.shareIcon)
+        favouriteIcon.image = UIImage(systemName: "heart.fill")!.withTintColor(.red, renderingMode: .alwaysOriginal)
+//        FavourtieLable.text = "Favourtie"
+        
+        shareIcon.image = UIImage(systemName: "square.and.arrow.up")
+        
     }
 }
