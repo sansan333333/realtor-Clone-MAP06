@@ -311,7 +311,22 @@ class TitlePreviewViewController: UIViewController {
         
         
         
+        
+        
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(favouriteIconTapped))
+        favouriteIcon.isUserInteractionEnabled = true
+        favouriteIcon.addGestureRecognizer(tapGesture)
+        
+        
     }
+    
+    
+    // fave icon action
+    @objc func favouriteIconTapped() {
+        print("welcome")
+    }
+    
     
     public func configure (with model: TitlePreviewViewModel) {
         
