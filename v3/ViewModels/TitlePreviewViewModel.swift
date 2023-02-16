@@ -10,4 +10,9 @@ import UIKit
 struct TitlePreviewViewModel {
     let favouriteIcon, shareIcon: String
     let propertyImage: String
+    let price: String
+    let address: String
+    let bedroomNum: String
+//    let bathroom: String
+    let propertyInfoDetailes: String
 }
