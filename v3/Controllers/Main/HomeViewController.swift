@@ -152,7 +152,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
                                                              price: (MLSResult[0].Property?.Price)!,
                                                              address: (MLSResult[0].Property?.Address?.AddressText)!,
                                                              bedroomNum: (MLSResult[0].Building?.Bedrooms)!,
-                                                             propertyInfoDetailes: (MLSResult[0].PublicRemarks)!
+                                                             propertyInfoDetailes: (MLSResult[0].PublicRemarks)!,
+                                                             MlsNumber: (MLSResult[0].MlsNumber)!
                                                             )
 //                                                             bathroom: (MLSResult[0].Building?.BathroomTotal)!)
                                  

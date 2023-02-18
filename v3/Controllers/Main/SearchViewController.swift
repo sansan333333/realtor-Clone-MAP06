@@ -31,11 +31,6 @@ class SearchViewController: UIViewController {
         
         searchController.searchResultsUpdater = self
     }
-    
-    
-    
-    
-    
 }
 
 extension SearchViewController: UISearchResultsUpdating {

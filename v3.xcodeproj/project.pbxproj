@@ -11,6 +11,8 @@
 		BF42CB2E29932FAE00533A43 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42CB2D29932FAE00533A43 /* Model.swift */; };
 		BF42CB33299333B600533A43 /* PropertyListViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42CB32299333B600533A43 /* PropertyListViewTableViewCell.swift */; };
 		BF42CB35299369FD00533A43 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42CB34299369FD00533A43 /* HeroHeaderUIView.swift */; };
+		BF587F47299FE97600F5D5F4 /* DataPersistenceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF587F46299FE97600F5D5F4 /* DataPersistenceManger.swift */; };
+		BF587F4929A01E4800F5D5F4 /* CoreDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF587F4829A01E4800F5D5F4 /* CoreDataTableViewCell.swift */; };
 		BF81744F2992B6520083FA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81744E2992B6520083FA75 /* AppDelegate.swift */; };
 		BF8174512992B6520083FA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8174502992B6520083FA75 /* SceneDelegate.swift */; };
 		BF8174532992B6520083FA75 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8174522992B6520083FA75 /* MainTabBarViewController.swift */; };
@@ -35,6 +37,8 @@
 		BF42CB2D29932FAE00533A43 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BF42CB32299333B600533A43 /* PropertyListViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListViewTableViewCell.swift; sourceTree = "<group>"; };
 		BF42CB34299369FD00533A43 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
+		BF587F46299FE97600F5D5F4 /* DataPersistenceManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManger.swift; sourceTree = "<group>"; };
+		BF587F4829A01E4800F5D5F4 /* CoreDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewCell.swift; sourceTree = "<group>"; };
 		BF81744B2992B6520083FA75 /* v3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = v3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF81744E2992B6520083FA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF8174502992B6520083FA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 			children = (
 				BF42CB32299333B600533A43 /* PropertyListViewTableViewCell.swift */,
 				BF42CB34299369FD00533A43 /* HeroHeaderUIView.swift */,
+				BF587F4829A01E4800F5D5F4 /* CoreDataTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				BF39C471299419E500ECF65B /* APICaller.swift */,
+				BF587F46299FE97600F5D5F4 /* DataPersistenceManger.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -244,7 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF42CB33299333B600533A43 /* PropertyListViewTableViewCell.swift in Sources */,
+				BF587F47299FE97600F5D5F4 /* DataPersistenceManger.swift in Sources */,
 				BF42CB2E29932FAE00533A43 /* Model.swift in Sources */,
+				BF587F4929A01E4800F5D5F4 /* CoreDataTableViewCell.swift in Sources */,
 				BF8174672992B81D0083FA75 /* HomeViewController.swift in Sources */,
 				BFA5DC7829956262001048FC /* SearchModel.swift in Sources */,
 				BF8174692992B83E0083FA75 /* MapViewController.swift in Sources */,

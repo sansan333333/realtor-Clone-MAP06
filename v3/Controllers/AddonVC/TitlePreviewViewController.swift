@@ -144,7 +144,12 @@ class TitlePreviewViewController: UIViewController {
         return label
     }()
     
-    
+    private let MlsNumber: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+        
+    }()
     
     
     override func viewDidLoad() {
@@ -153,6 +158,8 @@ class TitlePreviewViewController: UIViewController {
         
         
         configureConstraints()
+        
+        
     }
     
     
@@ -267,7 +274,13 @@ class TitlePreviewViewController: UIViewController {
             
             
             
-            propertyInfoDetailes.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20)
+//            propertyInfoDetailes.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20)
+        ]
+        
+        let MlsNumberConstrains = [
+            MlsNumber.topAnchor.constraint(equalTo: propertyInfoDetailes.bottomAnchor, constant: 30),
+            MlsNumber.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
+            MlsNumber.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50)
         ]
         
         
@@ -284,6 +297,7 @@ class TitlePreviewViewController: UIViewController {
         contentView.addSubview(numberBathroomLabel)
         contentView.addSubview(propertyInfo)
         contentView.addSubview(propertyInfoDetailes)
+        contentView.addSubview(MlsNumber)
         
         
         
@@ -306,6 +320,7 @@ class TitlePreviewViewController: UIViewController {
         
         NSLayoutConstraint.activate(propertyInfoConstrains)
         NSLayoutConstraint.activate(propertyInfoDetailesConstreains)
+        NSLayoutConstraint.activate(MlsNumberConstrains)
         
         
         
@@ -314,6 +329,7 @@ class TitlePreviewViewController: UIViewController {
         
         
         
+        //fav icon tapped
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(favouriteIconTapped))
         favouriteIcon.isUserInteractionEnabled = true
         favouriteIcon.addGestureRecognizer(tapGesture)
@@ -322,10 +338,33 @@ class TitlePreviewViewController: UIViewController {
     }
     
     
+    
+    
+    
+    
     // fave icon action
     @objc func favouriteIconTapped() {
-        print("welcome")
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let newPropertyItem = PropertyItem(context: context)
+        
+        newPropertyItem.address = self.addressLabel.text
+        newPropertyItem.price = self.priceLabel.text
+        newPropertyItem.mlsNumber = self.MlsNumber.text
+        
+        do {
+            try context.save()
+            print("saved to core data")
+            print(context)
+            print(newPropertyItem)
+            
+        } catch {
+            print("error saving to core data")
+        }
+        
     }
+        
+    
     
     
     public func configure (with model: TitlePreviewViewModel) {
@@ -353,6 +392,8 @@ class TitlePreviewViewController: UIViewController {
         propertyInfo.text = "Property Info"
         
         propertyInfoDetailes.text = model.propertyInfoDetailes
+        
+        MlsNumber.text = "MLS : " + model.MlsNumber
     }
 }
 

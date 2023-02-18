@@ -15,4 +15,5 @@ struct TitlePreviewViewModel {
     let bedroomNum: String
 //    let bathroom: String
     let propertyInfoDetailes: String
+    let MlsNumber: String
 }
