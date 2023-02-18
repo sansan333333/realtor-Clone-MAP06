@@ -285,10 +285,8 @@
             filePath = "v3/Controllers/Main/FavoriteViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
+            startingLineNumber = "101"
+            endingLineNumber = "101">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -301,10 +299,10 @@
             filePath = "v3/Controllers/Main/FavoriteViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "FavoriteViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -317,10 +315,8 @@
             filePath = "v3/Controllers/Main/FavoriteViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "fetchFromCoreDataForSaved()"
-            landmarkType = "7">
+            startingLineNumber = "111"
+            endingLineNumber = "111">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -381,8 +377,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "356"
-            endingLineNumber = "356"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
             landmarkName = "favouriteIconTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -400,6 +396,84 @@
             startingLineNumber = "349"
             endingLineNumber = "349"
             landmarkName = "favouriteIconTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9D3F8EA-FB4B-4379-A52A-70E0E9D72D92"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3D40133-ED67-4B74-A5B3-B37678DB2D6B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "fetchFromCoreDataForSaved()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B3D40133-ED67-4B74-A5B3-B37678DB2D6B - 5a4173b0d0985b28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Result&gt;, Swift.Error&gt;) -&gt; () in v3.FavoriteViewController.getimageUrl() -&gt; ()"
+                  moduleName = "v3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/FavoriteViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "B3D40133-ED67-4B74-A5B3-B37678DB2D6B - 5a4173b0d0985b28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Result&gt;, Swift.Error&gt;) -&gt; () in v3.FavoriteViewController.getimageUrl() -&gt; ()"
+                  moduleName = "v3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/FavoriteViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1057">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80AC7191-73A3-40B3-B5BD-B1F30F114462"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "fetchFromCoreDataForSaved()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

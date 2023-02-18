@@ -86,4 +86,22 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
-}
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            switch editingStyle {
+            case .delete:
+                
+                DataPersistenceManger.shared.deletePropertyWith(model: propertyItems[indexPath.row]) { [weak self] result in
+                    switch result {
+                    case .success():
+                        print("Deleted fromt the database")
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                    self?.propertyItems.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            default:
+                break;
+            }
+        }}

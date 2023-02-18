@@ -59,16 +59,23 @@ class DataPersistenceManger {
     
     
     
-    func deletePropertyWith(model: PropertyItem) {
+    func deletePropertyWith(model: PropertyItem, completion: @escaping (Swift.Result<Void, Error>)-> Void) {
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
         
         context.delete(model)
         
-        do{
+        do {
             try context.save()
+            completion(.success(()))
         } catch {
             
         }
+        
     }
 }
