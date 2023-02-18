@@ -74,8 +74,6 @@ class DataPersistenceManger {
             try context.save()
             completion(.success(()))
         } catch {
-            
         }
-        
     }
 }
