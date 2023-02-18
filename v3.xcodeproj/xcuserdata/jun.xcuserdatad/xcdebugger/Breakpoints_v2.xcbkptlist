@@ -84,49 +84,49 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - b41e43fada152852"
+                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - 67764362e5ee3684"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "v3.MapViewController.gpsAnotationsApiCall() -&gt; ()"
                   moduleName = "v3"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/MapViewController.swift"
+                  urlString = "file:///Users/jun/Downloads/realtorCloneMAP06/v3/Controllers/Main/MapViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
                   endingLineNumber = "85"
-                  offsetFromSymbolStart = "30">
+                  offsetFromSymbolStart = "32">
                </Location>
                <Location
-                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - df1cd9fa71873af"
+                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - de99cd0798e36d79"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Pin&gt;, Swift.Error&gt;) -&gt; () in v3.MapViewController.gpsAnotationsApiCall() -&gt; ()"
                   moduleName = "v3"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/MapViewController.swift"
+                  urlString = "file:///Users/jun/Downloads/realtorCloneMAP06/v3/Controllers/Main/MapViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
                   endingLineNumber = "85"
-                  offsetFromSymbolStart = "233">
+                  offsetFromSymbolStart = "212">
                </Location>
                <Location
-                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - 1db777cfecb60484"
+                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - cedf7757d34d1a52"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Pin&gt;, Swift.Error&gt;) -&gt; () in v3.MapViewController.gpsAnotationsApiCall() -&gt; ()"
                   moduleName = "v3"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/MapViewController.swift"
+                  urlString = "file:///Users/jun/Downloads/realtorCloneMAP06/v3/Controllers/Main/MapViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
                   endingLineNumber = "85"
-                  offsetFromSymbolStart = "34">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -286,23 +286,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
-            endingLineNumber = "101">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DA815128-BFAF-4535-B28E-06EE65CCF28E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "FavoriteViewController"
-            landmarkType = "3">
+            endingLineNumber = "101"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -411,70 +397,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
             endingLineNumber = "118">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B3D40133-ED67-4B74-A5B3-B37678DB2D6B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "fetchFromCoreDataForSaved()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B3D40133-ED67-4B74-A5B3-B37678DB2D6B - 5a4173b0d0985b28"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Result&gt;, Swift.Error&gt;) -&gt; () in v3.FavoriteViewController.getimageUrl() -&gt; ()"
-                  moduleName = "v3"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/FavoriteViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "212">
-               </Location>
-               <Location
-                  uuid = "B3D40133-ED67-4B74-A5B3-B37678DB2D6B - 5a4173b0d0985b28"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Result&gt;, Swift.Error&gt;) -&gt; () in v3.FavoriteViewController.getimageUrl() -&gt; ()"
-                  moduleName = "v3"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/FavoriteViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "1057">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "80AC7191-73A3-40B3-B5BD-B1F30F114462"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "fetchFromCoreDataForSaved()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
