@@ -8,7 +8,7 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
- 
+    
     private let CoreDataTableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CoreDataTableViewCell.self, forCellReuseIdentifier: CoreDataTableViewCell.identifier)
@@ -49,22 +49,23 @@ class FavoriteViewController: UIViewController {
                     
                 }
             case.failure(let error):
+                print("error happened @ FavoriteViewController 52")
                 print(error.localizedDescription)
             }
             
         }
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//
-//        do {
-//            self.propertyItems = try context.fetch(PropertyItem.fetchRequest())
-//            DispatchQueue.main.async {
-//
-//                self.CoreDataTableView.reloadData()
-//                print("will load tableiew")
-//            }
-//        }catch{
-//
-//        }
+        //        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        //
+        //        do {
+        //            self.propertyItems = try context.fetch(PropertyItem.fetchRequest())
+        //            DispatchQueue.main.async {
+        //
+        //                self.CoreDataTableView.reloadData()
+        //                print("will load tableiew")
+        //            }
+        //        }catch{
+        //
+        //        }
     }
 }
 
@@ -88,20 +89,68 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            switch editingStyle {
-            case .delete:
-                
-                DataPersistenceManger.shared.deletePropertyWith(model: propertyItems[indexPath.row]) { [weak self] result in
-                    switch result {
-                    case .success():
-                        print("Deleted fromt the database")
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                    self?.propertyItems.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
+        switch editingStyle {
+        case .delete:
+            
+            DataPersistenceManger.shared.deletePropertyWith(model: propertyItems[indexPath.row]) { [weak self] result in
+                switch result {
+                case .success():
+                    print("Deleted fromt the database")
+                case .failure(let error):
+                    print("error happened @ FavoriteViewController 100")
+                    print(error.localizedDescription)
                 }
-            default:
-                break;
+                self?.propertyItems.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }
-        }}
+        default:
+            break;
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+        
+        let property = propertyItems[indexPath.row]
+        
+        
+
+        guard let propertyMls = property.mlsNumber else {
+            print("no propertyMls + @ FavoriteViewController 117")
+            return
+        }
+        
+        //let property = propertyItems[indexPath.row] = "MLS : 26484134"
+        
+        let newPropertyMls = propertyMls.replacingOccurrences(of: "MLS : ", with: "")
+        
+        print(newPropertyMls)
+        
+        APICaller.shared.SearchByMLS(for: newPropertyMls) { [weak self] result in
+            switch result {
+            case .success(let MLSResult):
+                DispatchQueue.main.async {
+                    print(MLSResult)
+                    let vc = TitlePreviewViewController()
+                    vc.configure(with: TitlePreviewViewModel(favouriteIcon: "heart",
+                                                             shareIcon: "heart",
+                                                             propertyImage: (MLSResult[0].Property?.Photo![0].HighResPath)!,
+                                                             price: (MLSResult[0].Property?.Price)!,
+                                                             address: (MLSResult[0].Property?.Address?.AddressText)!,
+                                                             bedroomNum: (MLSResult[0].Building?.Bedrooms)!,
+                                                             propertyInfoDetailes: (MLSResult[0].PublicRemarks)!,
+                                                             MlsNumber: (MLSResult[0].MlsNumber)!
+                                                            ))
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+            case .failure(let error):
+                print("no propertyMls + @ FavoriteViewController 142")
+                print(error.localizedDescription)
+            }
+        }
+    }
+}
+

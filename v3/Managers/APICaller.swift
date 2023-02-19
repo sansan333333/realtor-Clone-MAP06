@@ -123,6 +123,7 @@ class APICaller {
                 let results = try JSONDecoder().decode(PropertyList.self, from: data)
                 completion(.success(results.Results!))
             } catch {
+                print("error happened @ APICaller 126")
                 completion(.failure(APIError.failedTogetData))
             }
         }

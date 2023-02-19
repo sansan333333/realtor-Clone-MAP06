@@ -84,49 +84,49 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - 67764362e5ee3684"
+                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - b41e43fada152852"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "v3.MapViewController.gpsAnotationsApiCall() -&gt; ()"
                   moduleName = "v3"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jun/Downloads/realtorCloneMAP06/v3/Controllers/Main/MapViewController.swift"
+                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/MapViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
                   endingLineNumber = "85"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "30">
                </Location>
                <Location
-                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - de99cd0798e36d79"
+                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - df1cd9fa71873af"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Pin&gt;, Swift.Error&gt;) -&gt; () in v3.MapViewController.gpsAnotationsApiCall() -&gt; ()"
                   moduleName = "v3"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jun/Downloads/realtorCloneMAP06/v3/Controllers/Main/MapViewController.swift"
+                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/MapViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
                   endingLineNumber = "85"
-                  offsetFromSymbolStart = "212">
+                  offsetFromSymbolStart = "233">
                </Location>
                <Location
-                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - cedf7757d34d1a52"
+                  uuid = "CFD98EAB-106B-41D6-B58D-FA91431C8F88 - 1db777cfecb60484"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Pin&gt;, Swift.Error&gt;) -&gt; () in v3.MapViewController.gpsAnotationsApiCall() -&gt; ()"
                   moduleName = "v3"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jun/Downloads/realtorCloneMAP06/v3/Controllers/Main/MapViewController.swift"
+                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/MapViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
                   endingLineNumber = "85"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "34">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -278,22 +278,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "63612139-CC11-43BF-91BF-F55E5C936868"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "tableView(_:commit:forRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BF7E18E4-12F4-4088-98DD-F49C295ABA31"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -397,6 +381,108 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
             endingLineNumber = "118">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5D8D25F-9CAB-4F28-81DD-80CD462D1439"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5FF4DECC-B747-45A9-85F4-ED3EE1167D26"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67757EC9-1535-46FE-83DE-0A8D2B2C6BCA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4ACAD87F-49AC-4A92-BF19-130D6B7CD128"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131">
+            <Locations>
+               <Location
+                  uuid = "4ACAD87F-49AC-4A92-BF19-130D6B7CD128 - 5e35a1da69da90e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Result&gt;, Swift.Error&gt;) -&gt; () in v3.FavoriteViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "v3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/FavoriteViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1928">
+               </Location>
+               <Location
+                  uuid = "4ACAD87F-49AC-4A92-BF19-130D6B7CD128 - 5e35a1da69da90e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;v3.Result&gt;, Swift.Error&gt;) -&gt; () in v3.FavoriteViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "v3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/JohnAbbott%20on%20Mac/ios/v3/v3/Controllers/Main/FavoriteViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "2774">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBF1E8FF-F94F-4A48-888A-2FAD8CEB2CC0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "v3/Controllers/Main/FavoriteViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
