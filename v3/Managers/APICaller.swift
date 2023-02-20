@@ -107,7 +107,8 @@ class APICaller {
         
         let headers = [
             "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
-            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+            "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
+//            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
         
         let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
@@ -198,4 +199,104 @@ class APICaller {
         }
         task.resume()
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func getHomePageListByUpdateGPSWithPinResult(for currentPage: Int, LatitudeMax: Double, LatitudeMin: Double, LongitudeMax: Double, LongitudeMin: Double, completion: @escaping (Swift.Result<PropertyList,Error>) -> Void) {
+        let endpoint = "https://realty-in-ca1.p.rapidapi.com/properties/list-residential?LatitudeMax=\(LatitudeMax)&LatitudeMin=\(LatitudeMin)&LongitudeMax=\(LongitudeMax)&LongitudeMin=\(LongitudeMin)&CurrentPage=\(currentPage)&RecordsPerPage=100&SortOrder=A&SortBy=1&CultureId=1&NumberOfDays=0&BedRange=0-0&BathRange=0-0&RentMin=0"
+        
+        guard let url = URL(string: endpoint) else {
+            //            completed(nil, "This username created an invalid request. Please try again.")
+            return
+        }
+        
+        let headers = [
+            "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
+            "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
+//            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+        ]
+        
+        let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, _, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            do {
+                let results = try JSONDecoder().decode(PropertyList.self, from: data)
+                completion(.success(results.self))
+            } catch {
+                completion(.failure(APIError.failedTogetData))
+            }
+        }
+        task.resume()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func getPropertyDetail(for mls: String, PropertyID: String, completion: @escaping (Swift.Result<Result,Error>) -> Void) {
+        let endpoint = "https://realty-in-ca1.p.rapidapi.com/properties/detail?ReferenceNumber=\(mls)&PropertyID=\(PropertyID)&PreferedMeasurementUnit=1&CultureId=1"
+        
+        guard let url = URL(string: endpoint) else {
+            //            completed(nil, "This username created an invalid request. Please try again.")
+            return
+        }
+        
+        let headers = [
+            "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
+            "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
+//            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+        ]
+        
+        let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, _, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            do {
+                let results = try JSONDecoder().decode(Result.self, from: data)
+                completion(.success(results.self))
+            } catch {
+                completion(.failure(APIError.failedTogetData))
+            }
+        }
+        task.resume()
+    }
+    
+    
 }

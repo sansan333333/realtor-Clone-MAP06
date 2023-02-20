@@ -25,6 +25,7 @@
 		BF81746D2992B9210083FA75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81746C2992B9210083FA75 /* SearchViewController.swift */; };
 		BFA5DC76299551EE001048FC /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5DC75299551EE001048FC /* SearchResultsViewController.swift */; };
 		BFA5DC7829956262001048FC /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5DC7729956262001048FC /* SearchModel.swift */; };
+		BFB749D629A3562800564C52 /* SearchPropertyListViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB749D529A3562800564C52 /* SearchPropertyListViewTableViewCell.swift */; };
 		BFB7BEA729945B2B000A7D54 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = BFB7BEA629945B2B000A7D54 /* SDWebImage */; };
 		BFB7BEA929945B2B000A7D54 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BFB7BEA829945B2B000A7D54 /* SDWebImageMapKit */; };
 		BFB7BEAB2994607B000A7D54 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7BEAA2994607B000A7D54 /* ListingViewModel.swift */; };
@@ -53,6 +54,7 @@
 		BF81746C2992B9210083FA75 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BFA5DC75299551EE001048FC /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		BFA5DC7729956262001048FC /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		BFB749D529A3562800564C52 /* SearchPropertyListViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPropertyListViewTableViewCell.swift; sourceTree = "<group>"; };
 		BFB7BEAA2994607B000A7D54 /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
 		BFBFCC882997226E009B42A6 /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
 		BFDADD7B2996ABE000D8A191 /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				BF42CB32299333B600533A43 /* PropertyListViewTableViewCell.swift */,
+				BFB749D529A3562800564C52 /* SearchPropertyListViewTableViewCell.swift */,
 				BF42CB34299369FD00533A43 /* HeroHeaderUIView.swift */,
 				BF587F4829A01E4800F5D5F4 /* CoreDataTableViewCell.swift */,
 			);
@@ -262,6 +265,7 @@
 				BF8174592992B6520083FA75 /* v3.xcdatamodeld in Sources */,
 				BF81746B2992B88B0083FA75 /* FavoriteViewController.swift in Sources */,
 				BF39C472299419E500ECF65B /* APICaller.swift in Sources */,
+				BFB749D629A3562800564C52 /* SearchPropertyListViewTableViewCell.swift in Sources */,
 				BF8174532992B6520083FA75 /* MainTabBarViewController.swift in Sources */,
 				BF42CB35299369FD00533A43 /* HeroHeaderUIView.swift in Sources */,
 				BFDADD7C2996ABE000D8A191 /* TitlePreviewViewController.swift in Sources */,

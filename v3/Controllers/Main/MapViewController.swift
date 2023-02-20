@@ -10,8 +10,9 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController {
-
+    
     var pins: [Pin] = [Pin]()
+    var results: [Result] = [Result]()
     
     let mapView = MKMapView()
     let locationManager = CLLocationManager()
@@ -38,14 +39,8 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
         
         
-        
-        
-
         addShowCurrentLocationButton()
-       gpsAnotationsApiCall()
-//       addPins()
-        
-        
+        gpsAnotationsApiCall()
     }
     
     
@@ -61,24 +56,24 @@ class MapViewController: UIViewController {
     
     
     func addShowCurrentLocationButton() {
-            showCurrentLocationButton = UIButton(type: .system)
-            showCurrentLocationButton.setTitle("Show My Current Location", for: .normal)
-            showCurrentLocationButton.tintColor = .label
-            showCurrentLocationButton.addTarget(self, action: #selector(showCurrentLocation), for: .touchUpInside)
-            view.addSubview(showCurrentLocationButton)
-            
-            showCurrentLocationButton.translatesAutoresizingMaskIntoConstraints = false
-            showCurrentLocationButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
-            showCurrentLocationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        }
-    
+        showCurrentLocationButton = UIButton(type: .system)
+        showCurrentLocationButton.setTitle("Show My Current Location", for: .normal)
+        showCurrentLocationButton.tintColor = .label
+        showCurrentLocationButton.addTarget(self, action: #selector(showCurrentLocation), for: .touchUpInside)
+        view.addSubview(showCurrentLocationButton)
         
-        @objc func showCurrentLocation() {
-            guard let location = locationManager.location?.coordinate else { return }
-            let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            mapView.setRegion(region, animated: true)
-        }
-
+        showCurrentLocationButton.translatesAutoresizingMaskIntoConstraints = false
+        showCurrentLocationButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+        showCurrentLocationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    
+    @objc func showCurrentLocation() {
+        guard let location = locationManager.location?.coordinate else { return }
+        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        mapView.setRegion(region, animated: true)
+    }
+    
     
     
     func gpsAnotationsApiCall() {
@@ -86,13 +81,9 @@ class MapViewController: UIViewController {
             switch result {
             case.success(let results):
                 self?.pins = results
-                
-                
-                
                 DispatchQueue.main.async {
                     self?.addPins()
                 }
-
             case.failure(let error):
                 print(error.localizedDescription)
             }
@@ -105,9 +96,9 @@ class MapViewController: UIViewController {
         if pins.count != 0 {
             
             for pin in pins {
-            let propertyPins = MKPointAnnotation()
-
-                propertyPins.title = "house"
+                let propertyPins = MKPointAnnotation()
+                
+                propertyPins.title = pin.propertyId
                 propertyPins.coordinate = CLLocationCoordinate2D(
                     latitude: Double(pin.latitude!)!, longitude: Double(pin.longitude!)!
                 )
@@ -115,6 +106,21 @@ class MapViewController: UIViewController {
             }
         }
     }
+    
+    var mls = ""
+    
+    func c() {
+        
+        for result in results {
+            for pin in pins {
+                
+                while pin.propertyId == result.Id {
+                    mls = result.MlsNumber!
+                }
+            }
+        }
+    }
+    
 }
 
 
@@ -139,30 +145,81 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
         // Redo the API call and update the annotations
         // ...
         let region = mapView.region
-                let latitudeMax = region.center.latitude + region.span.latitudeDelta / 2
-                let latitudeMin = region.center.latitude - region.span.latitudeDelta / 2
-                let longitudeMax = region.center.longitude + region.span.longitudeDelta / 2
-                let longitudeMin = region.center.longitude - region.span.longitudeDelta / 2
+        let latitudeMax = region.center.latitude + region.span.latitudeDelta / 2
+        let latitudeMin = region.center.latitude - region.span.latitudeDelta / 2
+        let longitudeMax = region.center.longitude + region.span.longitudeDelta / 2
+        let longitudeMin = region.center.longitude - region.span.longitudeDelta / 2
         print(region)
-
-            // Redo the API call and update the annotations
-        APICaller.shared.getHomePageListByUpdateGPS(for: 1, LatitudeMax: latitudeMax, LatitudeMin: latitudeMin, LongitudeMax: longitudeMax, LongitudeMin: longitudeMin) { [weak self] result in
-                switch result {
-                case.success(let results):
-                    self?.pins = results
-                    
-                    DispatchQueue.main.async {
-                        self?.mapView.removeAnnotations(self!.mapView.annotations)
-                        self?.addPins()
-                    }
-                    
-                    
-                case.failure(let error):
-                    print(error.localizedDescription)
+        
+        
+        
+        //         Redo the API call and update the annotations
+        APICaller.shared.getHomePageListByUpdateGPSWithPinResult(for: 1, LatitudeMax: latitudeMax, LatitudeMin: latitudeMin, LongitudeMax: longitudeMax, LongitudeMin: longitudeMin) { [weak self] result in
+            switch result {
+            case.success(let results):
+                self?.pins = results.Pins!
+                self?.results = results.Results!
+                
+                DispatchQueue.main.async {
+                    self?.mapView.removeAnnotations(self!.mapView.annotations)
+                    self?.addPins()
                 }
+                
+            case.failure(let error):
+                print(error.localizedDescription)
             }
+        }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//        guard let annotation = view.annotation as? MKPointAnnotation else {
+//            return
+//        }
+//
+//        let propertyId = annotation.title ?? ""
+//
+//        var mls = ""
+//        
+//        for result in results {
+//            while result.Id == propertyId {
+//                mls = result.MlsNumber!
+//            }
+//        }
+//        
+//
+//        APICaller.shared.getPropertyDetail(for: mls, PropertyID: propertyId) { result in
+//            switch result {
+//            case.success(let propertyDetail):
+//                DispatchQueue.main.async {
+//                    let vc = TitlePreviewViewController()
+//                    vc.configure(with: TitlePreviewViewModel(favouriteIcon: "heart",
+//                                                             shareIcon: "heart",
+//                                                             propertyImage: (propertyDetail.Property?.Photo![0].HighResPath)!,
+//                                                             price: (propertyDetail.Property?.Price)!,
+//                                                             address: (propertyDetail.Property?.Address?.AddressText)!,
+//                                                             bedroomNum: (propertyDetail.Building?.Bedrooms)!,
+//                                                             propertyInfoDetailes: propertyDetail.PublicRemarks!,
+//                                                             MlsNumber: propertyDetail.MlsNumber!))
+//                }
+//            case .failure(let error):
+//                print("error from didSelect" + error.localizedDescription)
+//            }
+//        }
+//    }
+    
+
+    
 }
+
+
 
 
 
@@ -197,12 +254,12 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 
 //        locationManager.delegate = self
 //        locationManager.startUpdatingLocation()
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
 //        showCurrentLocationButton = UIButton(type: .system)
 //        showCurrentLocationButton.setTitle("Show Current Location", for: .normal)
 //        showCurrentLocationButton.translatesAutoresizingMaskIntoConstraints = false

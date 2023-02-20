@@ -7,6 +7,10 @@
 
 import UIKit
 
+struct PropertyMain: Codable {
+    let PropertyList: PropertyList
+}
+
 struct PropertyList: Codable {
     let Results: [Result]?
     let Pins: [Pin]?

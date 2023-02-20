@@ -53,6 +53,7 @@ class PropertyListViewTableViewCell: UITableViewCell {
             listingImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             listingImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             listingImage.heightAnchor.constraint(equalToConstant: 150)
+            
         ]
         
         let priceLableConstraints = [
