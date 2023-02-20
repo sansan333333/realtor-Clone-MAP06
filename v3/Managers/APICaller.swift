@@ -15,7 +15,7 @@ enum APIError: Error {
 class APICaller {
     static let shared = APICaller()
     
-    
+    let apiKey = "c3898f3e2bmsh3b029f8090ae97cp1520c4jsn42f7f525d228"
     
     
     
@@ -34,7 +34,7 @@ class APICaller {
         }
         
         let headers = [
-            "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
+            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
 //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
@@ -71,8 +71,8 @@ class APICaller {
         }
         
         let headers = [
-            "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
-            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+            "X-RapidAPI-Key": apiKey,
+            "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
         ]
         
         let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
@@ -106,7 +106,7 @@ class APICaller {
         }
         
         let headers = [
-            "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
+            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
 //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
@@ -142,7 +142,7 @@ class APICaller {
         }
         
         let headers = [
-            "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
+            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
 //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
@@ -176,7 +176,7 @@ class APICaller {
         }
         
         let headers = [
-            "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
+            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
 //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
@@ -230,7 +230,7 @@ class APICaller {
         }
         
         let headers = [
-            "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
+            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
 //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
@@ -274,7 +274,8 @@ class APICaller {
         }
         
         let headers = [
-            "X-RapidAPI-Key": "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e",
+            "X-RapidAPI-Key": apiKey,
+            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
 //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]

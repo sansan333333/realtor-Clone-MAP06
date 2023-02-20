@@ -93,7 +93,7 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
         
         let mls = searchResult.ReferenceNumber
         print(mls)
-        APICaller.shared.SearchByMLS(for: mls) { [weak self] result in
+        APICaller.shared.SearchByMLS(for: mls) { result in
             switch result {
             case .success(let MLSResult):
                 DispatchQueue.main.async {
@@ -107,7 +107,7 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
                                                              propertyInfoDetailes: (MLSResult[0].PublicRemarks) ?? "",
                                                              MlsNumber: (MLSResult[0].MlsNumber)!)
                     )
-                    self?.navigationController?.pushViewController(vc, animated: true)
+                    self.navigationController?.pushViewController(vc, animated: true)
                     
                 }
                 

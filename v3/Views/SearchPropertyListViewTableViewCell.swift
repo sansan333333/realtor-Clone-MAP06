@@ -34,7 +34,7 @@ class SearchPropertyListViewTableViewCell: UITableViewCell {
     func applyConstraints() {
         
         let addressLabelConstraints = [
-            addressLabel.topAnchor.constraint(equalTo: contentView.bottomAnchor),
+            addressLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 20),
             addressLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             addressLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ]
