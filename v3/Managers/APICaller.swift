@@ -274,7 +274,7 @@ class APICaller {
         }
         
         let headers = [
-            "X-RapidAPI-Key": apiKey,
+//            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
 //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"

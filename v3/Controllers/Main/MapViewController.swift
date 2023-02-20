@@ -179,41 +179,42 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     
     
     
-//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//        guard let annotation = view.annotation as? MKPointAnnotation else {
-//            return
-//        }
-//
-//        let propertyId = annotation.title ?? ""
-//
-//        var mls = ""
-//        
-//        for result in results {
-//            while result.Id == propertyId {
-//                mls = result.MlsNumber!
-//            }
-//        }
-//        
-//
-//        APICaller.shared.getPropertyDetail(for: mls, PropertyID: propertyId) { result in
-//            switch result {
-//            case.success(let propertyDetail):
-//                DispatchQueue.main.async {
-//                    let vc = TitlePreviewViewController()
-//                    vc.configure(with: TitlePreviewViewModel(favouriteIcon: "heart",
-//                                                             shareIcon: "heart",
-//                                                             propertyImage: (propertyDetail.Property?.Photo![0].HighResPath)!,
-//                                                             price: (propertyDetail.Property?.Price)!,
-//                                                             address: (propertyDetail.Property?.Address?.AddressText)!,
-//                                                             bedroomNum: (propertyDetail.Building?.Bedrooms)!,
-//                                                             propertyInfoDetailes: propertyDetail.PublicRemarks!,
-//                                                             MlsNumber: propertyDetail.MlsNumber!))
-//                }
-//            case .failure(let error):
-//                print("error from didSelect" + error.localizedDescription)
-//            }
-//        }
-//    }
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotation = view.annotation as? MKPointAnnotation else {
+            return
+        }
+
+        let propertyId = annotation.title ?? ""
+
+        var mls = ""
+        
+        for result in results {
+            if result.Id == propertyId {
+                mls = result.MlsNumber!
+            }
+        }
+        
+
+        APICaller.shared.getPropertyDetail(for: mls, PropertyID: propertyId) { result in
+            switch result {
+            case.success(let propertyDetail):
+                DispatchQueue.main.async {
+                    let vc = TitlePreviewViewController()
+                    vc.configure(with: TitlePreviewViewModel(favouriteIcon: "heart",
+                                                             shareIcon: "heart",
+                                                             propertyImage: (propertyDetail.Property?.Photo![0].HighResPath)!,
+                                                             price: (propertyDetail.Property?.Price)!,
+                                                             address: (propertyDetail.Property?.Address?.AddressText)!,
+                                                             bedroomNum: (propertyDetail.Building?.Bedrooms)!,
+                                                             propertyInfoDetailes: propertyDetail.PublicRemarks!,
+                                                             MlsNumber: propertyDetail.MlsNumber!))
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            case .failure(let error):
+                print("error from didSelect" + error.localizedDescription)
+            }
+        }
+    }
     
 
     

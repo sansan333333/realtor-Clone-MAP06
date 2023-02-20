@@ -155,11 +155,7 @@ class TitlePreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        
-        
         configureConstraints()
-        
-        
     }
     
     
@@ -177,7 +173,6 @@ class TitlePreviewViewController: UIViewController {
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ]
         
-        
         scrollView.addSubview(contentView)
         let contentViewConstrains = [
             contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
@@ -186,15 +181,6 @@ class TitlePreviewViewController: UIViewController {
             contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         ]
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         let propertyImageConstrains = [
             propertyImage.topAnchor.constraint(equalTo: contentView.topAnchor),

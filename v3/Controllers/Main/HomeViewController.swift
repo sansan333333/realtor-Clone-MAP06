@@ -155,8 +155,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
                                                              propertyInfoDetailes: (MLSResult[0].PublicRemarks)!,
                                                              MlsNumber: (MLSResult[0].MlsNumber)!
                                                             )
-//                                                             bathroom: (MLSResult[0].Building?.BathroomTotal)!)
-                                 
                     )
                     self.navigationController?.pushViewController(vc, animated: true)
                 }

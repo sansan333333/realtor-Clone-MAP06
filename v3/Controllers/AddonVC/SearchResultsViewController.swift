@@ -87,6 +87,7 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         let searchResult = results[indexPath.row]
@@ -96,19 +97,20 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
         APICaller.shared.SearchByMLS(for: mls) { result in
             switch result {
             case .success(let MLSResult):
+                let vc = TitlePreviewViewController()
                 DispatchQueue.main.async {
-                    let vc = TitlePreviewViewController()
+                    
                     vc.configure(with: TitlePreviewViewModel(favouriteIcon: "heart",
                                                              shareIcon: "heart",
                                                              propertyImage: (MLSResult[0].Property?.Photo![0].HighResPath)!,
                                                              price: (MLSResult[0].Property?.Price) ?? "",
                                                              address: (MLSResult[0].Property?.Address?.AddressText)!,
                                                              bedroomNum: (MLSResult[0].Building?.Bedrooms) ?? "",
-                                                             propertyInfoDetailes: (MLSResult[0].PublicRemarks) ?? "",
-                                                             MlsNumber: (MLSResult[0].MlsNumber)!)
+                                                             propertyInfoDetailes: (MLSResult[0].PublicRemarks)!,
+                                                             MlsNumber: (MLSResult[0].MlsNumber)!
+                                                            )
                     )
                     self.navigationController?.pushViewController(vc, animated: true)
-                    
                 }
                 
             case .failure(let error):
