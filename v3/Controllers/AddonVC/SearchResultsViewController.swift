@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol SearchResultsViewControllerDelegate: AnyObject {
+    func SearchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel)
+}
+
 class SearchResultsViewController: UIViewController {
     
     public var results: [SearchResult] = [SearchResult]()
     
+    public weak var delegate: SearchResultsViewControllerDelegate?
+    
     public let ListPropertyTableView: UITableView = {
-
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(SearchPropertyListViewTableViewCell.self, forCellReuseIdentifier: SearchPropertyListViewTableViewCell.identifier)
         return table
@@ -30,17 +35,15 @@ class SearchResultsViewController: UIViewController {
         searchAPICall()
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        ListPropertyTableView.frame = view.bounds
-//    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        ListPropertyTableView.frame = view.bounds
+    }
     
     func ListPropertyTableViewDelegate() {
         ListPropertyTableView.delegate = self
         ListPropertyTableView.dataSource = self
     }
-    
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,25 +97,20 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
         
         let mls = searchResult.ReferenceNumber
         print(mls)
-        APICaller.shared.SearchByMLS(for: mls) { result in
+        
+        APICaller.shared.SearchByMLS(for: mls) { [weak self] result in
             switch result {
             case .success(let MLSResult):
-                let vc = TitlePreviewViewController()
-                DispatchQueue.main.async {
-                    
-                    vc.configure(with: TitlePreviewViewModel(favouriteIcon: "heart",
-                                                             shareIcon: "heart",
-                                                             propertyImage: (MLSResult[0].Property?.Photo![0].HighResPath)!,
-                                                             price: (MLSResult[0].Property?.Price) ?? "",
-                                                             address: (MLSResult[0].Property?.Address?.AddressText)!,
-                                                             bedroomNum: (MLSResult[0].Building?.Bedrooms) ?? "",
-                                                             propertyInfoDetailes: (MLSResult[0].PublicRemarks)!,
-                                                             MlsNumber: (MLSResult[0].MlsNumber)!
-                                                            )
-                    )
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-                
+                self?.delegate?.SearchResultsViewControllerDidTapItem(TitlePreviewViewModel(favouriteIcon: "heart",
+                                                                                            shareIcon: "heart",
+                                                                                            propertyImage: (MLSResult[0].Property?.Photo![0].HighResPath ?? ""),
+                                                                                            price: (MLSResult[0].Property?.Price ?? ""),
+                                                                                            address: (MLSResult[0].Property?.Address?.AddressText ?? ""),
+                                                                                            bedroomNum: (MLSResult[0].Building?.Bedrooms ?? ""),
+                                                                                            propertyInfoDetailes: (MLSResult[0].PublicRemarks)!,
+                                                                                            MlsNumber: (MLSResult[0].MlsNumber)!
+                                                                                          )
+                )
             case .failure(let error):
                 print("no propertyMls + @ FavoriteViewController 142")
                 print(error.localizedDescription)

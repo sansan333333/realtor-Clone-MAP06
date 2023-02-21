@@ -137,9 +137,9 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
                     vc.configure(with: TitlePreviewViewModel(favouriteIcon: "heart",
                                                              shareIcon: "heart",
                                                              propertyImage: (MLSResult[0].Property?.Photo![0].HighResPath)!,
-                                                             price: (MLSResult[0].Property?.Price)!,
-                                                             address: (MLSResult[0].Property?.Address?.AddressText)!,
-                                                             bedroomNum: (MLSResult[0].Building?.Bedrooms)!,
+                                                             price: (MLSResult[0].Property?.Price ?? ""),
+                                                             address: (MLSResult[0].Property?.Address?.AddressText ?? ""),
+                                                             bedroomNum: (MLSResult[0].Building?.Bedrooms ?? ""),
                                                              propertyInfoDetailes: (MLSResult[0].PublicRemarks)!,
                                                              MlsNumber: (MLSResult[0].MlsNumber)!
                                                             ))
