@@ -27,7 +27,12 @@ class HomeViewController: UIViewController {
         ListPropertyTableViewDelegate()
         
         //adding header at tableview as uiview
-        let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 380))
+//        let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 380))
+//        ListPropertyTableView.tableHeaderView = headerView
+        
+        
+        
+        let headerView = MapUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 380))
         ListPropertyTableView.tableHeaderView = headerView
         
         configNavBar()

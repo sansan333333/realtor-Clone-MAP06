@@ -32,6 +32,7 @@
 		BFBFCC892997226E009B42A6 /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBFCC882997226E009B42A6 /* TitlePreviewViewModel.swift */; };
 		BFDADD7C2996ABE000D8A191 /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDADD7B2996ABE000D8A191 /* TitlePreviewViewController.swift */; };
 		BFF5005229A52A19003058ED /* ShowPickerButtonViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF5005129A52A19003058ED /* ShowPickerButtonViewViewController.swift */; };
+		BFF5005429A55FA9003058ED /* MapUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF5005329A55FA9003058ED /* MapUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		BFBFCC882997226E009B42A6 /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
 		BFDADD7B2996ABE000D8A191 /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
 		BFF5005129A52A19003058ED /* ShowPickerButtonViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPickerButtonViewViewController.swift; sourceTree = "<group>"; };
+		BFF5005329A55FA9003058ED /* MapUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				BF42CB34299369FD00533A43 /* HeroHeaderUIView.swift */,
 				BF587F4829A01E4800F5D5F4 /* CoreDataTableViewCell.swift */,
 				BFF5005129A52A19003058ED /* ShowPickerButtonViewViewController.swift */,
+				BFF5005329A55FA9003058ED /* MapUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				BF42CB33299333B600533A43 /* PropertyListViewTableViewCell.swift in Sources */,
 				BF587F47299FE97600F5D5F4 /* DataPersistenceManger.swift in Sources */,
 				BF42CB2E29932FAE00533A43 /* Model.swift in Sources */,
+				BFF5005429A55FA9003058ED /* MapUIView.swift in Sources */,
 				BFF5005229A52A19003058ED /* ShowPickerButtonViewViewController.swift in Sources */,
 				BF587F4929A01E4800F5D5F4 /* CoreDataTableViewCell.swift in Sources */,
 				BF8174672992B81D0083FA75 /* HomeViewController.swift in Sources */,
