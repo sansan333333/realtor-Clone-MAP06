@@ -17,6 +17,9 @@ class FavoriteViewController: UIViewController {
     
     private var propertyItems: [PropertyItem] = [PropertyItem]()
     
+//    private let refreshControl = UIRefreshControl()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +34,43 @@ class FavoriteViewController: UIViewController {
         CoreDataTableView.dataSource = self
         
         fetchFromCoreDataForSaved()
+        
+        
+        
+//        CoreDataTableView.addSubview(refreshControl)
+//        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        
     }
+    
+    
+    
+    
+    
+    
+    
+    
+//    @objc private func refreshData(_ sender: Any) {
+//        // Reload the data here
+//        CoreDataTableView.reloadData()
+//        refreshControl.endRefreshing()
+//    }
+    
+    
+    
+    
+    
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchFromCoreDataForSaved()
+    }
+    
+    
+    
+    
+    
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
