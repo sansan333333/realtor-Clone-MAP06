@@ -16,4 +16,11 @@ struct TitlePreviewViewModel {
 //    let bathroom: String
     let propertyInfoDetailes: String
     let MlsNumber: String
+    let bathroom: String
+    let agentImage: String
+    let agentName: String
+    let agentPhone: String
+    let agentCompanyLogo: String
+    let agentCompany: String
+    
 }

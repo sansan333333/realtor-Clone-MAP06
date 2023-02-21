@@ -14,8 +14,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
             landmarkName = "favouriteIconTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
             landmarkName = "favouriteIconTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "339"
-            endingLineNumber = "339"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
             landmarkName = "favouriteIconTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
             landmarkName = "favouriteIconTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
             landmarkName = "favouriteIconTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "v3/Controllers/Main/FavoriteViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196">
+            startingLineNumber = "223"
+            endingLineNumber = "223">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -108,8 +108,8 @@
             filePath = "v3/Controllers/Main/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -140,8 +140,8 @@
             filePath = "v3/Controllers/Main/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "mapView(_:didSelect:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -236,8 +236,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "356"
-            endingLineNumber = "356"
+            startingLineNumber = "486"
+            endingLineNumber = "486"
             landmarkName = "configure(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -252,8 +252,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "configure(with:)"
             landmarkType = "7">
             <Locations>
@@ -300,8 +300,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -316,8 +316,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -332,8 +332,8 @@
             filePath = "v3/Controllers/AddonVC/TitlePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "configureConstraints()"
             landmarkType = "7">
          </BreakpointContent>

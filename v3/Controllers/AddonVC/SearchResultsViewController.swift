@@ -103,14 +103,20 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
             case .success(let MLSResult):
                 self?.delegate?.SearchResultsViewControllerDidTapItem(TitlePreviewViewModel(favouriteIcon: "heart",
                                                                                             shareIcon: "heart",
-                                                                                            propertyImage: (MLSResult[0].Property?.Photo![0].HighResPath ?? ""),
+                                                                                            propertyImage: (MLSResult[0].Property?.Photo![0].HighResPath)!,
                                                                                             price: (MLSResult[0].Property?.Price ?? ""),
                                                                                             address: (MLSResult[0].Property?.Address?.AddressText ?? ""),
-                                                                                            bedroomNum: (MLSResult[0].Building?.Bedrooms ?? ""),
+                                                                                            bedroomNum: (MLSResult[0].Building?.Bedrooms ?? "0"),
                                                                                             propertyInfoDetailes: (MLSResult[0].PublicRemarks)!,
-                                                                                            MlsNumber: (MLSResult[0].MlsNumber)!
+                                                                                            MlsNumber: (MLSResult[0].MlsNumber)!,
+                                                                                            bathroom: (MLSResult[0].Building?.BathroomTotal ?? "0"),
+                                                                                            agentImage: MLSResult[0].Individual?[0].PhotoHighRes ?? "",
+                                                                                            agentName: MLSResult[0].Individual?[0].Name ?? "",
+                                                                                            agentPhone: MLSResult[0].Individual?[0].Phones?[0].PhoneNumber ?? "",
+                                                                                            agentCompanyLogo: MLSResult[0].Individual?[0].Organization.Logo ?? "",
+                                                                                            agentCompany: MLSResult[0].Individual?[0].Organization.Name ?? ""
+                                                                                                      )
                                                                                           )
-                )
             case .failure(let error):
                 print("no propertyMls + @ FavoriteViewController 142")
                 print(error.localizedDescription)

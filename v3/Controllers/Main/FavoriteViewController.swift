@@ -8,12 +8,28 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        <#code#>
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        <#code#>
+//    }
+    
     
     private let CoreDataTableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CoreDataTableViewCell.self, forCellReuseIdentifier: CoreDataTableViewCell.identifier)
         return table
     }()
+    
+    
+    
+    
+    
+    
+    
+    
     
     private var propertyItems: [PropertyItem] = [PropertyItem]()
     
@@ -30,10 +46,15 @@ class FavoriteViewController: UIViewController {
         
         view.addSubview(CoreDataTableView)
         
+        
         CoreDataTableView.delegate = self
         CoreDataTableView.dataSource = self
         
+        
         fetchFromCoreDataForSaved()
+        
+//        let headerView = ShowPickerButtonViewViewController(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 50))
+//        CoreDataTableView.tableHeaderView = headerView
         
         
         
@@ -57,7 +78,7 @@ class FavoriteViewController: UIViewController {
     
     
     
-    
+
     
     
     
@@ -178,9 +199,15 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
                                                              propertyImage: (MLSResult[0].Property?.Photo![0].HighResPath)!,
                                                              price: (MLSResult[0].Property?.Price ?? ""),
                                                              address: (MLSResult[0].Property?.Address?.AddressText ?? ""),
-                                                             bedroomNum: (MLSResult[0].Building?.Bedrooms ?? ""),
+                                                             bedroomNum: (MLSResult[0].Building?.Bedrooms ?? "0"),
                                                              propertyInfoDetailes: (MLSResult[0].PublicRemarks)!,
-                                                             MlsNumber: (MLSResult[0].MlsNumber)!
+                                                             MlsNumber: (MLSResult[0].MlsNumber)!,
+                                                             bathroom: (MLSResult[0].Building?.BathroomTotal ?? "0"),
+                                                             agentImage: MLSResult[0].Individual?[0].PhotoHighRes ?? "",
+                                                             agentName: MLSResult[0].Individual?[0].Name ?? "",
+                                                             agentPhone: MLSResult[0].Individual?[0].Phones?[0].PhoneNumber ?? "",
+                                                             agentCompanyLogo: MLSResult[0].Individual?[0].Organization.Logo ?? "",
+                                                             agentCompany: MLSResult[0].Individual?[0].Organization.Name ?? ""
                                                             ))
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }

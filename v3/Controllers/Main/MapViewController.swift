@@ -205,9 +205,16 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
                                                              propertyImage: (propertyDetail.Property?.Photo![0].HighResPath)!,
                                                              price: (propertyDetail.Property?.Price)!,
                                                              address: (propertyDetail.Property?.Address?.AddressText)!,
-                                                             bedroomNum: (propertyDetail.Building?.Bedrooms)!,
+                                                             bedroomNum: (propertyDetail.Building?.Bedrooms ?? "0"),
                                                              propertyInfoDetailes: propertyDetail.PublicRemarks!,
-                                                             MlsNumber: propertyDetail.MlsNumber!))
+                                                             MlsNumber: propertyDetail.MlsNumber!,
+                                                             bathroom: (propertyDetail.Building?.BathroomTotal ?? "0"),
+                                                             agentImage: propertyDetail.Individual?[0].PhotoHighRes ?? "",
+                                                             agentName: propertyDetail.Individual?[0].Name ?? "",
+                                                             agentPhone: propertyDetail.Individual?[0].Phones?[0].PhoneNumber ?? "",
+                                                             agentCompanyLogo: propertyDetail.Individual?[0].Organization.Logo ?? "",
+                                                             agentCompany: propertyDetail.Individual?[0].Organization.Name ?? ""
+                                                            ))
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             case .failure(let error):

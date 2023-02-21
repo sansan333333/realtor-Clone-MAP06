@@ -139,7 +139,7 @@ class TitlePreviewViewController: UIViewController {
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.font = .systemFont(ofSize: 20, weight: .light)
         label.numberOfLines = 0
         return label
     }()
@@ -148,7 +148,61 @@ class TitlePreviewViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-        
+    }()
+    
+    
+    
+    
+    
+    
+    private let agentInfo: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Agent Info"
+        label.font = .systemFont(ofSize: 30, weight: .bold)
+        return label
+    }()
+    
+    private let agentImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.image = UIImage(named: "house")
+        return image
+    }()
+    
+    private let agentName: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Agent Name"
+        label.font = .systemFont(ofSize: 20, weight: .black)
+        return label
+    }()
+    
+    private let agentPhone: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "514-123-4567"
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        return label
+    }()
+    
+    private let agentCompany: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Agent Company"
+        label.font = .systemFont(ofSize: 20, weight: .black)
+        return label
+    }()
+    
+    private let agentCompanyLogo: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.image = UIImage(named: "house")
+        return image
     }()
     
     
@@ -238,12 +292,12 @@ class TitlePreviewViewController: UIViewController {
             BathroomIcon.widthAnchor.constraint(equalToConstant: 20)
         ]
         
-        //        let numberBathroomLabelConstrains = [
-        //            numberBedroomLabel.topAnchor.constraint(equalTo: BathroomIcon.bottomAnchor, constant: 30),
-        //            numberBedroomLabel.leadingAnchor.constraint(equalTo: BathroomIcon.trailingAnchor, constant: 10),
-        //            BathroomIcon.heightAnchor.constraint(equalToConstant: 20),
-        //            BathroomIcon.widthAnchor.constraint(equalToConstant: 20)
-        //        ]
+        let numberBathroomLabelConstrains = [
+            numberBathroomLabel.topAnchor.constraint(equalTo: BathroomIcon.topAnchor),
+            numberBathroomLabel.leadingAnchor.constraint(equalTo: BathroomIcon.trailingAnchor, constant: 10),
+            BathroomIcon.heightAnchor.constraint(equalToConstant: 20),
+            BathroomIcon.widthAnchor.constraint(equalToConstant: 20)
+        ]
         
         
         let propertyInfoConstrains = [
@@ -257,18 +311,64 @@ class TitlePreviewViewController: UIViewController {
             propertyInfoDetailes.topAnchor.constraint(equalTo: propertyInfo.bottomAnchor, constant: 50),
             propertyInfoDetailes.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 50),
             propertyInfoDetailes.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -50),
-            
-            
-            
-//            propertyInfoDetailes.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20)
         ]
         
         let MlsNumberConstrains = [
             MlsNumber.topAnchor.constraint(equalTo: propertyInfoDetailes.bottomAnchor, constant: 30),
-            MlsNumber.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
-            MlsNumber.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50)
+            MlsNumber.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50)
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+//            MlsNumber.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50)
         ]
         
+        let agentInfoConstrains = [
+            agentInfo.topAnchor.constraint(equalTo: MlsNumber.bottomAnchor, constant: 30),
+            agentInfo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50)
+        ]
+        
+        let agentImageConstrains = [
+            agentImage.topAnchor.constraint(equalTo: agentInfo.bottomAnchor, constant: 30),
+            agentImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
+            agentImage.widthAnchor.constraint(equalToConstant: 100),
+        ]
+        
+        let agentNameConstrains = [
+            agentName.topAnchor.constraint(equalTo: agentImage.topAnchor, constant: 20),
+            agentName.leadingAnchor.constraint(equalTo: agentImage.trailingAnchor, constant: 30),
+            agentName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
+        ]
+        
+        let agentPhoneConstrains = [
+            agentPhone.topAnchor.constraint(equalTo: agentName.bottomAnchor, constant: 30),
+            agentPhone.leadingAnchor.constraint(equalTo: agentImage.trailingAnchor, constant: 30),
+            agentPhone.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
+        ]
+        
+        let agentCompanyLogoConstrains = [
+            agentCompanyLogo.topAnchor.constraint(equalTo: agentImage.bottomAnchor, constant: 60),
+            agentCompanyLogo.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            agentCompanyLogo.heightAnchor.constraint(equalToConstant: 300),
+            agentCompanyLogo.widthAnchor.constraint(equalToConstant: 300)
+        ]
+        
+        let agentCompanyConstrains = [
+            agentCompany.topAnchor.constraint(equalTo: agentCompanyLogo.bottomAnchor),
+            agentCompany.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            agentCompany.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50)
+        ]
         
         
         
@@ -287,6 +387,21 @@ class TitlePreviewViewController: UIViewController {
         
         
         
+        
+        
+        
+        contentView.addSubview(agentInfo)
+        contentView.addSubview(agentImage)
+        contentView.addSubview(agentName)
+        contentView.addSubview(agentPhone)
+        contentView.addSubview(agentCompanyLogo)
+        contentView.addSubview(agentCompany)
+        
+        
+        
+        
+        
+        
         NSLayoutConstraint.activate(scrollViewContrains)
         NSLayoutConstraint.activate(contentViewConstrains)
         
@@ -302,11 +417,26 @@ class TitlePreviewViewController: UIViewController {
         NSLayoutConstraint.activate(numberBedroomLabelCOnstrains)
         
         NSLayoutConstraint.activate(BathroomIconConstrains)
-        //        NSLayoutConstraint.activate(numberBathroomLabelConstrains)
+        NSLayoutConstraint.activate(numberBathroomLabelConstrains)
         
         NSLayoutConstraint.activate(propertyInfoConstrains)
         NSLayoutConstraint.activate(propertyInfoDetailesConstreains)
         NSLayoutConstraint.activate(MlsNumberConstrains)
+        
+        
+        
+        
+        
+        
+        
+        
+        NSLayoutConstraint.activate(agentInfoConstrains)
+        NSLayoutConstraint.activate(agentImageConstrains)
+        NSLayoutConstraint.activate(agentNameConstrains)
+        NSLayoutConstraint.activate(agentPhoneConstrains)
+        NSLayoutConstraint.activate(agentCompanyLogoConstrains)
+        NSLayoutConstraint.activate(agentCompanyConstrains)
+        
         
         
         
@@ -373,13 +503,33 @@ class TitlePreviewViewController: UIViewController {
         
         BathroomIcon.image = UIImage(systemName: "shower")
         
-        //        numberBathroomLabel.text = model.bathroom
+                numberBathroomLabel.text = model.bathroom
         
         propertyInfo.text = "Property Info"
         
         propertyInfoDetailes.text = model.propertyInfoDetailes
         
         MlsNumber.text = "MLS : " + model.MlsNumber
+        
+        
+        
+        
+        
+        
+        agentInfo.text = "Agent Info"
+        
+        
+        guard let url = URL(string: model.agentImage) else {return}
+        agentImage.sd_setImage(with: url)
+        
+        agentName.text = model.agentName
+        
+        agentPhone.text = model.agentPhone
+        
+        guard let url = URL(string: model.agentCompanyLogo) else {return}
+        agentCompanyLogo.sd_setImage(with: url)
+        
+        agentCompany.text = model.agentCompany
     }
 }
 
