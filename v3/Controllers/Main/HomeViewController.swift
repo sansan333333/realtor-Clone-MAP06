@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: UIViewController {
     
     var results: [Result] = [Result]()
+    var page = 1
+    var hasMorePropertys = true
     
     private let ListPropertyTableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -38,7 +40,7 @@ class HomeViewController: UIViewController {
         configNavBar()
         
         
-        homeVCListingAPICall()
+        homeVCListingAPICall(page: page)
         
         
         
@@ -74,11 +76,13 @@ class HomeViewController: UIViewController {
     }
 
     
-    func homeVCListingAPICall() {
-        APICaller.shared.getHomePageList(for: 1) { [weak self] result in
+    func homeVCListingAPICall(page: Int) {
+        APICaller.shared.getHomePageList(for: page) { [weak self] result in
             switch result {
             case .success(let results):
-                self?.results = results
+//                self?.results = results
+                if results.count < 10 { self?.hasMorePropertys = false }
+                self?.results.append(contentsOf: results)
                 DispatchQueue.main.async {
                     self?.ListPropertyTableView.reloadData()
                 }
@@ -115,9 +119,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 40
-//    }
+    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    //        return 40
+    //    }
     
     
     //each tableview cell height
@@ -125,9 +129,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         return 300
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 20
-//    }
+    //    func numberOfSections(in tableView: UITableView) -> Int {
+    //        return 20
+    //    }
     
     //hide the navbar to be hiden
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -166,15 +170,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
                                                              agentCompanyLogo: MLSResult[0].Individual?[0].Organization.Logo ?? "",
                                                              agentCompany: MLSResult[0].Individual?[0].Organization.Name ?? "",
                                                              areaCode: MLSResult[0].Individual?[0].Phones?[0].AreaCode ?? ""
-                                                                       )
                                                             )
+                    )
                     
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             case.failure(let error):
                 print(error.localizedDescription)
             }
-            }
         }
     }
+    
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY         = scrollView.contentOffset.y
+        let contentHeight   = scrollView.contentSize.height
+        let height          = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            guard hasMorePropertys else { return }
+            page += 1
+            homeVCListingAPICall(page: page)
+        }
+    }
+}
 

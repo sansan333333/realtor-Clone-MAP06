@@ -192,7 +192,8 @@ class TitlePreviewViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Agent Company"
-        label.font = .systemFont(ofSize: 20, weight: .black)
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -524,7 +525,7 @@ class TitlePreviewViewController: UIViewController {
         
         BathroomIcon.image = UIImage(systemName: "shower")
         
-                numberBathroomLabel.text = model.bathroom
+        numberBathroomLabel.text = model.bathroom
         
         propertyInfo.text = "Property Info"
         

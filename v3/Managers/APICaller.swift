@@ -26,7 +26,7 @@ class APICaller {
     //https://stackoverflow.com/questions/67656782/cannot-specialize-non-generic-type-result
     
     func getHomePageList(for currentPage: Int, completion: @escaping (Swift.Result<[Result],Error>) -> Void) {
-        let endpoint = "https://realty-in-ca1.p.rapidapi.com/properties/list-residential?LatitudeMax=45.52265&LatitudeMin=45.51693&LongitudeMax=-73.71859&LongitudeMin=-73.72878&CurrentPage=\(currentPage)&RecordsPerPage=100&SortOrder=A&SortBy=1&CultureId=1&NumberOfDays=0&BedRange=0-0&BathRange=0-0&RentMin=0"
+        let endpoint = "https://realty-in-ca1.p.rapidapi.com/properties/list-residential?LatitudeMax=45.53672&LatitudeMin=45.45682&LongitudeMax=-73.57642&LongitudeMin=-73.84867&CurrentPage=\(currentPage)&RecordsPerPage=10&SortOrder=A&SortBy=1&CultureId=1&NumberOfDays=0&BedRange=0-0&BathRange=0-0&RentMin=0"
         
         guard let url = URL(string: endpoint) else {
             //            completed(nil, "This username created an invalid request. Please try again.")
