@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 class PropertyListViewTableViewCell: UITableViewCell {
-
+    
     static let identifier = "PropertyListViewTableViewCell"
     
     private let listingImage: UIImageView = {
@@ -34,6 +34,7 @@ class PropertyListViewTableViewCell: UITableViewCell {
     }()
     
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(listingImage)
@@ -53,7 +54,6 @@ class PropertyListViewTableViewCell: UITableViewCell {
             listingImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             listingImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             listingImage.heightAnchor.constraint(equalToConstant: 150)
-            
         ]
         
         let priceLableConstraints = [
@@ -70,13 +70,11 @@ class PropertyListViewTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate(listImageConstraints)
         NSLayoutConstraint.activate(priceLableConstraints)
         NSLayoutConstraint.activate(addressLabelConstraints)
-        
     }
     
     public func config(with model: ListingViewModel) {
         guard let url = URL(string: model.ListImageURL) else {return}
         listingImage.sd_setImage(with: url)
-        
         priceLable.text = model.priceLabel
         addressLabel.text = model.addressLable
     }

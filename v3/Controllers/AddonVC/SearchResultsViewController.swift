@@ -52,9 +52,6 @@ class SearchResultsViewController: UIViewController {
     }
     
     
-    
-
-    
     func searchAPICall(){
         APICaller.shared.getSearchList(for: "montreal") { [weak self] result in
             switch result {
@@ -94,7 +91,6 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
         tableView.deselectRow(at: indexPath, animated: true)
         
         let searchResult = results[indexPath.row]
-        
         let mls = searchResult.ReferenceNumber
         print(mls)
         
@@ -125,6 +121,3 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
 }
-
-
-

@@ -19,20 +19,11 @@ class TitlePreviewViewController: UIViewController {
         return view
     }()
     
-    
-    
     let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    
-    
-    
-    
-    
-    
     
     private let propertyImage: UIImageView = {
         let imageView = UIImageView()
@@ -50,13 +41,6 @@ class TitlePreviewViewController: UIViewController {
         //        imageView.image = UIImage(systemName: "heart")
         return imageView
     }()
-    
-//    private let shareIcon: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.image = UIImage(systemName: "square.and.arrow.up")
-//        return imageView
-//    }()
     
     private let FavourtieLable: UILabel = {
         let label = UILabel()
@@ -80,8 +64,6 @@ class TitlePreviewViewController: UIViewController {
         label.text = "$888"
         return label
     }()
-    
-    
     
     private let addressLabel: UILabel = {
         
@@ -108,7 +90,6 @@ class TitlePreviewViewController: UIViewController {
         return label
     }()
     
-    
     private let BathroomIcon: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -124,8 +105,6 @@ class TitlePreviewViewController: UIViewController {
         label.font = .systemFont(ofSize: 15, weight: .light)
         return label
     }()
-    
-    
     
     private let propertyInfo: UILabel = {
         
@@ -149,11 +128,6 @@ class TitlePreviewViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    
-    
-    
-    
     
     private let agentInfo: UILabel = {
         let label = UILabel()
@@ -206,7 +180,6 @@ class TitlePreviewViewController: UIViewController {
         return image
     }()
     
-    
     private let areaCode: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -227,10 +200,6 @@ class TitlePreviewViewController: UIViewController {
         view.backgroundColor = .systemBackground
         configureConstraints()
     }
-    
-    
-    
-    
     
     
     func configureConstraints() {
@@ -259,21 +228,12 @@ class TitlePreviewViewController: UIViewController {
             propertyImage.heightAnchor.constraint(equalToConstant: 300)
         ]
         
-        
         let favouriteIconConstrains = [
             favouriteIcon.topAnchor.constraint(equalTo: propertyImage.bottomAnchor, constant: 20),
             favouriteIcon.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 50),
             favouriteIcon.heightAnchor.constraint(equalToConstant: 30),
             favouriteIcon.widthAnchor.constraint(equalToConstant: 30)
         ]
-        
-        
-//        let shareIconConstrains = [
-//            shareIcon.topAnchor.constraint(equalTo: propertyImage.bottomAnchor, constant: 20),
-//            shareIcon.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -50),
-//            shareIcon.heightAnchor.constraint(equalToConstant: 30),
-//            shareIcon.widthAnchor.constraint(equalToConstant: 30)
-//        ]
         
         let priceLabelConstrains = [
             priceLabel.topAnchor.constraint(equalTo: favouriteIcon.bottomAnchor, constant: 20),
@@ -315,7 +275,6 @@ class TitlePreviewViewController: UIViewController {
             BathroomIcon.widthAnchor.constraint(equalToConstant: 20)
         ]
         
-        
         let propertyInfoConstrains = [
             propertyInfo.topAnchor.constraint(equalTo: BedroomIcon.bottomAnchor, constant: 50),
             propertyInfo.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 50),
@@ -332,22 +291,6 @@ class TitlePreviewViewController: UIViewController {
         let MlsNumberConstrains = [
             MlsNumber.topAnchor.constraint(equalTo: propertyInfoDetailes.bottomAnchor, constant: 30),
             MlsNumber.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50)
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-//            MlsNumber.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50)
         ]
         
         let agentInfoConstrains = [
@@ -366,12 +309,6 @@ class TitlePreviewViewController: UIViewController {
             agentName.leadingAnchor.constraint(equalTo: agentImage.trailingAnchor, constant: 30),
             agentName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
         ]
-        
-//        let agentPhoneConstrains = [
-//            agentPhone.topAnchor.constraint(equalTo: agentName.bottomAnchor, constant: 30),
-//            agentPhone.leadingAnchor.constraint(equalTo: agentImage.trailingAnchor, constant: 30),
-//            agentPhone.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
-//        ]
         
         let wholePhoneConstrains = [
             wholePhone.topAnchor.constraint(equalTo: agentName.bottomAnchor, constant: 20),
@@ -392,11 +329,8 @@ class TitlePreviewViewController: UIViewController {
             agentCompany.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50)
         ]
         
-        
-        
         contentView.addSubview(propertyImage)
         contentView.addSubview(favouriteIcon)
-//        contentView.addSubview(shareIcon)
         contentView.addSubview(priceLabel)
         contentView.addSubview(addressLabel)
         contentView.addSubview(BedroomIcon)
@@ -406,79 +340,38 @@ class TitlePreviewViewController: UIViewController {
         contentView.addSubview(propertyInfo)
         contentView.addSubview(propertyInfoDetailes)
         contentView.addSubview(MlsNumber)
-        
-        
-        
-        
-        
-        
         contentView.addSubview(agentInfo)
         contentView.addSubview(agentImage)
         contentView.addSubview(agentName)
-//        contentView.addSubview(agentPhone)
         contentView.addSubview(agentCompanyLogo)
         contentView.addSubview(agentCompany)
         contentView.addSubview(wholePhone)
         
-        
-        
-        
-        
-        
         NSLayoutConstraint.activate(scrollViewContrains)
         NSLayoutConstraint.activate(contentViewConstrains)
-        
-        
-        
         NSLayoutConstraint.activate(propertyImageConstrains)
         NSLayoutConstraint.activate(favouriteIconConstrains)
-//        NSLayoutConstraint.activate(shareIconConstrains)
         NSLayoutConstraint.activate(priceLabelConstrains)
         NSLayoutConstraint.activate(addressLabelConstrains)
-        
         NSLayoutConstraint.activate(bedRoomIconConstrains)
         NSLayoutConstraint.activate(numberBedroomLabelCOnstrains)
-        
         NSLayoutConstraint.activate(BathroomIconConstrains)
         NSLayoutConstraint.activate(numberBathroomLabelConstrains)
-        
         NSLayoutConstraint.activate(propertyInfoConstrains)
         NSLayoutConstraint.activate(propertyInfoDetailesConstreains)
         NSLayoutConstraint.activate(MlsNumberConstrains)
-        
-        
-        
-        
-        
-        
-        
-        
         NSLayoutConstraint.activate(agentInfoConstrains)
         NSLayoutConstraint.activate(agentImageConstrains)
         NSLayoutConstraint.activate(agentNameConstrains)
-//        NSLayoutConstraint.activate(agentPhoneConstrains)
         NSLayoutConstraint.activate(agentCompanyLogoConstrains)
         NSLayoutConstraint.activate(agentCompanyConstrains)
         NSLayoutConstraint.activate(wholePhoneConstrains)
-        
-        
-        
-        
-        
-        
-        
-        
         
         //fav icon tapped
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(favouriteIconTapped))
         favouriteIcon.isUserInteractionEnabled = true
         favouriteIcon.addGestureRecognizer(tapGesture)
     }
-    
-    
-    
-    
-    
     
     // fave icon action
     @objc func favouriteIconTapped() {
@@ -495,15 +388,10 @@ class TitlePreviewViewController: UIViewController {
             print("saved to core data")
             print(context)
             print(newPropertyItem)
-            
         } catch {
             print("error saving to core data")
         }
-        
     }
-        
-    
-    
     
     public func configure (with model: TitlePreviewViewModel) {
         
@@ -511,9 +399,6 @@ class TitlePreviewViewController: UIViewController {
         propertyImage.sd_setImage(with: url)
         
         favouriteIcon.image = UIImage(systemName: "heart.fill")!.withTintColor(.red, renderingMode: .alwaysOriginal)
-        //        FavourtieLable.text = "Favourtie"
-        
-//        shareIcon.image = UIImage(systemName: "square.and.arrow.up")
         
         priceLabel.text = model.price
         
@@ -533,13 +418,7 @@ class TitlePreviewViewController: UIViewController {
         
         MlsNumber.text = "MLS : " + model.MlsNumber
         
-        
-        
-        
-        
-        
         agentInfo.text = "Agent Info"
-        
         
         guard let url = URL(string: model.agentImage) else {return}
         agentImage.sd_setImage(with: url)
@@ -558,49 +437,3 @@ class TitlePreviewViewController: UIViewController {
         agentCompany.text = model.agentCompany
     }
 }
-
-
-
-
-
-
-//
-//    private let propertyType: UILabel = {
-//
-//        let label = UILabel()
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = .systemFont(ofSize: 22, weight: .bold)
-//        label.text = "Property Type"
-//        return label
-//    }()
-//
-//    private let propertySize: UILabel = {
-//
-//        let label = UILabel()
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = .systemFont(ofSize: 22, weight: .bold)
-//        label.text = "Property size"
-//        return label
-//    }()
-//
-//
-//    private let generalDescription: UILabel = {
-//
-//        let label = UILabel()
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = .systemFont(ofSize: 22, weight: .bold)
-//        label.text = "General Description"
-//        return label
-//    }()
-//
-//    private let moreButton: UIButton = {
-//
-//        let button = UIButton()
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        button.backgroundColor = .red
-//        button.setTitle("More", for: .normal)
-//        button.setTitleColor(.white, for: .normal)
-//        button.layer.cornerRadius = 8
-//        button.layer.masksToBounds = true
-//        return button
-//    }()

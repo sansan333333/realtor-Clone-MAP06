@@ -28,33 +28,12 @@ class HomeViewController: UIViewController {
         
         ListPropertyTableViewDelegate()
         
-        //adding header at tableview as uiview
-//        let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 380))
-//        ListPropertyTableView.tableHeaderView = headerView
-        
-        
-        
         let headerView = MapUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 380))
         ListPropertyTableView.tableHeaderView = headerView
         
         configNavBar()
         
-        
         homeVCListingAPICall(page: page)
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -80,7 +59,10 @@ class HomeViewController: UIViewController {
         APICaller.shared.getHomePageList(for: page) { [weak self] result in
             switch result {
             case .success(let results):
+                
+//                no add with recall APICaller
 //                self?.results = results
+                
                 if results.count < 10 { self?.hasMorePropertys = false }
                 self?.results.append(contentsOf: results)
                 DispatchQueue.main.async {
@@ -91,22 +73,13 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PropertyListViewTableViewCell.identifier, for: indexPath) as? PropertyListViewTableViewCell else {
@@ -119,28 +92,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     
-    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //        return 40
-    //    }
-    
-    
-    //each tableview cell height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
     
-    //    func numberOfSections(in tableView: UITableView) -> Int {
-    //        return 20
-    //    }
     
-    //hide the navbar to be hiden
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let defaultOffset = view.safeAreaInsets.top
         let offset = scrollView.contentOffset.y + defaultOffset
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
     }
-    
-    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -172,7 +133,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
                                                              areaCode: MLSResult[0].Individual?[0].Phones?[0].AreaCode ?? ""
                                                             )
                     )
-                    
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             case.failure(let error):
@@ -194,4 +154,3 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
 }
-

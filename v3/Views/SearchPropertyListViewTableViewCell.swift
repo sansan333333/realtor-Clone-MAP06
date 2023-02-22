@@ -9,7 +9,7 @@ import UIKit
 
 
 class SearchPropertyListViewTableViewCell: UITableViewCell {
-
+    
     static let identifier = "SearchPropertyListViewTableViewCell"
     
     private let addressLabel: UILabel = {
@@ -18,7 +18,6 @@ class SearchPropertyListViewTableViewCell: UITableViewCell {
         lable.lineBreakMode = .byTruncatingTail
         return lable
     }()
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -38,13 +37,12 @@ class SearchPropertyListViewTableViewCell: UITableViewCell {
             addressLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             addressLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ]
-    
-        NSLayoutConstraint.activate(addressLabelConstraints)
         
+        NSLayoutConstraint.activate(addressLabelConstraints)
     }
     
     public func config(with model: ListingViewModel) {
-
+        
         addressLabel.text = model.addressLable
     }
 }

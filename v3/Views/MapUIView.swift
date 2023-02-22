@@ -10,37 +10,21 @@ import MapKit
 
 class MapUIView: UIView, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    
     var pins: [Pin] = [Pin]()
     var results: [Result] = [Result]()
     let locationManager = CLLocationManager()
-//    let navigationController: UINavigationController?
-    
     
     let mapView: MKMapView = {
         let mapView = MKMapView()
         let location = CLLocationCoordinate2D(latitude: 45.5080401, longitude: -73.634295)
         let region = MKCoordinateRegion(center: location, latitudinalMeters: 1000, longitudinalMeters: 1000)
         mapView.setRegion(region, animated: true)
-        
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = location
-//        annotation.title = "Apple Inc."
-//        mapView.addAnnotation(annotation)
-        
         return mapView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        self.navigationController = navigationController
         addSubview(mapView)
-//        addGradient()
-        
-        
-        
-        
-        
         
         mapView.delegate = self
         
@@ -50,11 +34,8 @@ class MapUIView: UIView, MKMapViewDelegate, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         gpsAnotationsApiCall()
-        
-        
-        
     }
-
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -130,8 +111,6 @@ class MapUIView: UIView, MKMapViewDelegate, CLLocationManagerDelegate {
         let longitudeMin = region.center.longitude - region.span.longitudeDelta / 2
         print(region)
         
-        
-        
         //         Redo the API call and update the annotations
         APICaller.shared.getHomePageListByUpdateGPSWithPinResult(for: 1, LatitudeMax: latitudeMax, LatitudeMin: latitudeMin, LongitudeMax: longitudeMax, LongitudeMin: longitudeMin) { [weak self] result in
             switch result {
@@ -152,12 +131,9 @@ class MapUIView: UIView, MKMapViewDelegate, CLLocationManagerDelegate {
     
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        guard let annotation = view.annotation as? MKPointAnnotation else {
-            return
-        }
-
+        guard let annotation = view.annotation as? MKPointAnnotation else { return }
+        
         let propertyId = annotation.title ?? ""
-
         var mls = ""
         
         for result in results {
@@ -166,7 +142,6 @@ class MapUIView: UIView, MKMapViewDelegate, CLLocationManagerDelegate {
             }
         }
         
-
         APICaller.shared.getPropertyDetail(for: mls, PropertyID: propertyId) { result in
             switch result {
             case.success(let propertyDetail):
@@ -187,15 +162,12 @@ class MapUIView: UIView, MKMapViewDelegate, CLLocationManagerDelegate {
                                                              agentCompanyLogo: propertyDetail.Individual?[0].Organization.Logo ?? "",
                                                              agentCompany: propertyDetail.Individual?[0].Organization.Name ?? "",
                                                              areaCode: propertyDetail.Individual?[0].Phones?[0].AreaCode ?? ""
-                                                             
-                                                            ))
-//                    self.navigationController?.pushViewController(vc, animated: true)
+                                                            )
+                    )
                 }
             case .failure(let error):
                 print("error from didSelect" + error.localizedDescription)
             }
         }
     }
-    
-    
 }

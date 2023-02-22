@@ -8,14 +8,6 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        <#code#>
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        <#code#>
-//    }
-    
     
     private let CoreDataTableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -23,18 +15,7 @@ class FavoriteViewController: UIViewController {
         return table
     }()
     
-    
-    
-    
-    
-    
-    
-    
-    
     private var propertyItems: [PropertyItem] = [PropertyItem]()
-    
-//    private let refreshControl = UIRefreshControl()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,52 +27,15 @@ class FavoriteViewController: UIViewController {
         
         view.addSubview(CoreDataTableView)
         
-        
         CoreDataTableView.delegate = self
         CoreDataTableView.dataSource = self
         
-        
         fetchFromCoreDataForSaved()
-        
-//        let headerView = ShowPickerButtonViewViewController(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 50))
-//        CoreDataTableView.tableHeaderView = headerView
-        
-        
-        
-//        CoreDataTableView.addSubview(refreshControl)
-//        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
-        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-//    @objc private func refreshData(_ sender: Any) {
-//        // Reload the data here
-//        CoreDataTableView.reloadData()
-//        refreshControl.endRefreshing()
-//    }
-    
-    
-    
-
-    
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         fetchFromCoreDataForSaved()
     }
-    
-    
-    
-    
-    
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -112,20 +56,7 @@ class FavoriteViewController: UIViewController {
                 print("error happened @ FavoriteViewController 52")
                 print(error.localizedDescription)
             }
-            
         }
-        //        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        //
-        //        do {
-        //            self.propertyItems = try context.fetch(PropertyItem.fetchRequest())
-        //            DispatchQueue.main.async {
-        //
-        //                self.CoreDataTableView.reloadData()
-        //                print("will load tableiew")
-        //            }
-        //        }catch{
-        //
-        //        }
     }
 }
 
@@ -171,18 +102,12 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        
-        
         let property = propertyItems[indexPath.row]
         
-        
-
         guard let propertyMls = property.mlsNumber else {
             print("no propertyMls + @ FavoriteViewController 117")
             return
         }
-        
-        //let property = propertyItems[indexPath.row] = "MLS : 26484134"
         
         let newPropertyMls = propertyMls.replacingOccurrences(of: "MLS : ", with: "")
         

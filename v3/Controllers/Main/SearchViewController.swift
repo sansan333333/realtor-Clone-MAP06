@@ -41,21 +41,9 @@ extension SearchViewController: UISearchResultsUpdating, SearchResultsViewContro
         guard let query = searchBar.text,
               !query.trimmingCharacters(in: .whitespaces).isEmpty,
               query.trimmingCharacters(in: .whitespaces).count >= 2,
-              let resultController = searchController.searchResultsController as? SearchResultsViewController else {return}
-        
-        
-        
-        
-        
+              let resultController = searchController.searchResultsController as? SearchResultsViewController else { return }
         
         resultController.delegate = self
-        
-        
-        
-        
-        
-        
-        
         
         APICaller.shared.getSearchList(for: query) { result in
             DispatchQueue.main.async {
@@ -71,9 +59,7 @@ extension SearchViewController: UISearchResultsUpdating, SearchResultsViewContro
     }
     
     
-    
     func SearchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel) {
-        
         DispatchQueue.main.async { [weak self] in
             let vc = TitlePreviewViewController()
             vc.configure(with: viewModel)

@@ -18,9 +18,6 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     var showCurrentLocationButton: UIButton!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +34,6 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.startUpdatingLocation()
-        
         
         addShowCurrentLocationButton()
         gpsAnotationsApiCall()
@@ -74,8 +70,6 @@ class MapViewController: UIViewController {
         mapView.setRegion(region, animated: true)
     }
     
-    
-    
     func gpsAnotationsApiCall() {
         APICaller.shared.getGPSAnotations(for: 1) { [weak self] result in
             switch result {
@@ -90,11 +84,10 @@ class MapViewController: UIViewController {
         }
     }
     
-    
+
     func addPins() {
         
         if pins.count != 0 {
-            
             for pin in pins {
                 let propertyPins = MKPointAnnotation()
                 
@@ -136,8 +129,6 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
         let longitudeMin = region.center.longitude - region.span.longitudeDelta / 2
         print(region)
         
-        
-        
         //         Redo the API call and update the annotations
         APICaller.shared.getHomePageListByUpdateGPSWithPinResult(for: 1, LatitudeMax: latitudeMax, LatitudeMin: latitudeMin, LongitudeMax: longitudeMax, LongitudeMin: longitudeMin) { [weak self] result in
             switch result {
@@ -157,20 +148,12 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation as? MKPointAnnotation else {
             return
         }
 
         let propertyId = annotation.title ?? ""
-
         var mls = ""
         
         for result in results {
@@ -179,7 +162,6 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
             }
         }
         
-
         APICaller.shared.getPropertyDetail(for: mls, PropertyID: propertyId) { result in
             switch result {
             case.success(let propertyDetail):
@@ -208,60 +190,4 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
             }
         }
     }
-    
-
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//           if status == .authorizedWhenInUse {
-//               locationManager.startUpdatingLocation()
-//           }
-//       }
-//
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let location = locations.last!
-//        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-//        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-//        mapView.setRegion(region, animated: true)
-//    }
-
-
-//        locationManager.delegate = self
-//        locationManager.startUpdatingLocation()
-
-
-
-
-
-
-//        showCurrentLocationButton = UIButton(type: .system)
-//        showCurrentLocationButton.setTitle("Show Current Location", for: .normal)
-//        showCurrentLocationButton.translatesAutoresizingMaskIntoConstraints = false
-//        showCurrentLocationButton.addTarget(self, action: #selector(showCurrentLocation), for: .touchUpInside)
-//
-//        view.addSubview(showCurrentLocationButton)
-//
-//        NSLayoutConstraint.activate([
-//                    showCurrentLocationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
-//                    showCurrentLocationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-//                ])

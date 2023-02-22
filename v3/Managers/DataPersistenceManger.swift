@@ -15,8 +15,8 @@ class DataPersistenceManger {
     
     func toSavedProperty(model: TitlePreviewViewModel, completion: @escaping (Swift.Result<Void, Error>) -> Void) {
         
-//        short way to do the contextr
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        //        short way to do the contextr
+        //        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
@@ -24,7 +24,7 @@ class DataPersistenceManger {
         
         let item = PropertyItem(context: context)
         
-//        item.image = model.propertyImage
+        //        item.image = model.propertyImage
         item.price = model.price
         item.address = model.address
         item.mlsNumber = model.MlsNumber
@@ -42,21 +42,20 @@ class DataPersistenceManger {
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-//        let request: NSFetchRequest<PropertyItem>
-//
-//        request = PropertyItem.fetchRequest()
+        //        let request: NSFetchRequest<PropertyItem>
+        //
+        //        request = PropertyItem.fetchRequest()
         
-//        shorter way
-//        context.fetch(PropertyItem.fetchRequest())
+        //        shorter way
+        //        context.fetch(PropertyItem.fetchRequest())
         do {
-//            let property = try context.fetch(request)
+            //            let property = try context.fetch(request)
             let property = try context.fetch(PropertyItem.fetchRequest())
             completion(.success(property))
         } catch {
             completion(.failure(error))
         }
     }
-    
     
     
     func deletePropertyWith(model: PropertyItem, completion: @escaping (Swift.Result<Void, Error>)-> Void) {
@@ -66,7 +65,6 @@ class DataPersistenceManger {
         }
         
         let context = appDelegate.persistentContainer.viewContext
-        
         
         context.delete(model)
         

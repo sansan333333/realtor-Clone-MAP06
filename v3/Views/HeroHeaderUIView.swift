@@ -16,12 +16,12 @@ class HeroHeaderUIView: UIView {
         imageView.image = UIImage(named: "map")
         return imageView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(heroImageView)
-        addGradient()
         
+        addGradient()
     }
     
     override func layoutSubviews() {

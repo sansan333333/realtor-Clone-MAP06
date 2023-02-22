@@ -8,7 +8,7 @@
 import UIKit
 
 class CoreDataTableViewCell: UITableViewCell {
-
+    
     static let identifier = "CoreDataTableViewCell"
     
     private let listingImage: UIImageView = {
@@ -72,7 +72,6 @@ class CoreDataTableViewCell: UITableViewCell {
     public func config(with model: ListingViewModel) {
         guard let url = URL(string: model.ListImageURL) else {return}
         listingImage.sd_setImage(with: url)
-        
         priceLable.text = model.priceLabel
         addressLabel.text = model.addressLable
     }

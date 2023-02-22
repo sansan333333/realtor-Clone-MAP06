@@ -417,6 +417,7 @@
 				DEVELOPMENT_TEAM = LMNT6J3AAS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = v3/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Realtor API CALL";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "GPS Permission 2";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "GPS Permission";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -446,6 +447,7 @@
 				DEVELOPMENT_TEAM = LMNT6J3AAS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = v3/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Realtor API CALL";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "GPS Permission 2";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "GPS Permission";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

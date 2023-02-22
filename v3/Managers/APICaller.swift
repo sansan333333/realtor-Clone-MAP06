@@ -15,12 +15,7 @@ enum APIError: Error {
 class APICaller {
     static let shared = APICaller()
     
-    let apiKey = "c3898f3e2bmsh3b029f8090ae97cp1520c4jsn42f7f525d228"
-    
-    
-    
-    
-    
+    let apiKey = "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e"
     
     //To refer to the built in Result type, you can either rename your struct to something else, or you qualify it with Swift.Result:
     //https://stackoverflow.com/questions/67656782/cannot-specialize-non-generic-type-result
@@ -28,15 +23,14 @@ class APICaller {
     func getHomePageList(for currentPage: Int, completion: @escaping (Swift.Result<[Result],Error>) -> Void) {
         let endpoint = "https://realty-in-ca1.p.rapidapi.com/properties/list-residential?LatitudeMax=45.53672&LatitudeMin=45.45682&LongitudeMax=-73.57642&LongitudeMin=-73.84867&CurrentPage=\(currentPage)&RecordsPerPage=10&SortOrder=A&SortBy=1&CultureId=1&NumberOfDays=0&BedRange=0-0&BathRange=0-0&RentMin=0"
         
-        guard let url = URL(string: endpoint) else {
-            //            completed(nil, "This username created an invalid request. Please try again.")
-            return
-        }
+        guard let url = URL(string: endpoint) else { return }
+        
+        //            completed(nil, "This username created an invalid request. Please try again.")
         
         let headers = [
             "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
-//            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+            //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
         
         let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
@@ -45,7 +39,6 @@ class APICaller {
         
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) { data, _, error in
-            
             guard let data = data, error == nil else { return }
             
             do {
@@ -94,27 +87,26 @@ class APICaller {
         task.resume()
     }
     
+    
     func SearchByMLS(for mls: String, completion: @escaping (Swift.Result<[Result],Error>) -> Void) {
         
         guard mls.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) != nil else { return }
         
         let endpoint = "https://realty-in-ca1.p.rapidapi.com/properties/list-by-mls?ReferenceNumber=\(mls)&CultureId=1"
         
-        guard let url = URL(string: endpoint) else {
-            //            completed(nil, "This username created an invalid request. Please try again.")
-            return
-        }
+        guard let url = URL(string: endpoint) else { return }
+        //            completed(nil, "This username created an invalid request. Please try again.")
+        
         
         let headers = [
             "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
-//            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+            //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
         
         let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-        
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) { data, _, error in
             
@@ -132,19 +124,16 @@ class APICaller {
     }
     
     
-    
     func getGPSAnotations(for currentPage: Int, completion: @escaping (Swift.Result<[Pin],Error>) -> Void) {
         let endpoint = "https://realty-in-ca1.p.rapidapi.com/properties/list-residential?LatitudeMax=45.52265&LatitudeMin=45.51693&LongitudeMax=-73.71859&LongitudeMin=-73.72878&CurrentPage=\(currentPage)&RecordsPerPage=100&SortOrder=A&SortBy=1&CultureId=1&NumberOfDays=0&BedRange=0-0&BathRange=0-0&RentMin=0"
         
-        guard let url = URL(string: endpoint) else {
-            //            completed(nil, "This username created an invalid request. Please try again.")
-            return
-        }
+        guard let url = URL(string: endpoint) else { return }
+        //            completed(nil, "This username created an invalid request. Please try again.")
         
         let headers = [
             "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
-//            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+            //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
         
         let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
@@ -165,20 +154,18 @@ class APICaller {
         }
         task.resume()
     }
-
+    
     
     func getHomePageListByUpdateGPS(for currentPage: Int, LatitudeMax: Double, LatitudeMin: Double, LongitudeMax: Double, LongitudeMin: Double, completion: @escaping (Swift.Result<[Pin],Error>) -> Void) {
         let endpoint = "https://realty-in-ca1.p.rapidapi.com/properties/list-residential?LatitudeMax=\(LatitudeMax)&LatitudeMin=\(LatitudeMin)&LongitudeMax=\(LongitudeMax)&LongitudeMin=\(LongitudeMin)&CurrentPage=\(currentPage)&RecordsPerPage=100&SortOrder=A&SortBy=1&CultureId=1&NumberOfDays=0&BedRange=0-0&BathRange=0-0&RentMin=0"
         
-        guard let url = URL(string: endpoint) else {
-            //            completed(nil, "This username created an invalid request. Please try again.")
-            return
-        }
+        guard let url = URL(string: endpoint) else { return }
+        //            completed(nil, "This username created an invalid request. Please try again.")
         
         let headers = [
             "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
-//            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+            //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
         
         let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
@@ -199,26 +186,6 @@ class APICaller {
         }
         task.resume()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     func getHomePageListByUpdateGPSWithPinResult(for currentPage: Int, LatitudeMax: Double, LatitudeMin: Double, LongitudeMax: Double, LongitudeMin: Double, completion: @escaping (Swift.Result<PropertyList,Error>) -> Void) {
@@ -232,7 +199,7 @@ class APICaller {
         let headers = [
             "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
-//            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+            //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
         
         let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
@@ -255,16 +222,6 @@ class APICaller {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     func getPropertyDetail(for mls: String, PropertyID: String, completion: @escaping (Swift.Result<Result,Error>) -> Void) {
         let endpoint = "https://realty-in-ca1.p.rapidapi.com/properties/detail?ReferenceNumber=\(mls)&PropertyID=\(PropertyID)&PreferedMeasurementUnit=1&CultureId=1"
         
@@ -274,10 +231,10 @@ class APICaller {
         }
         
         let headers = [
-//            "X-RapidAPI-Key": apiKey,
+            //            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "realty-in-ca1.p.rapidapi.com"
-//            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
+            //            "X-RapidAPI-Host": "realtor-canadian-real-estate.p.rapidapi.com"
         ]
         
         let request = NSMutableURLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
@@ -298,6 +255,4 @@ class APICaller {
         }
         task.resume()
     }
-    
-    
 }
