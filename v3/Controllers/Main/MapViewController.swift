@@ -106,21 +106,6 @@ class MapViewController: UIViewController {
             }
         }
     }
-    
-    var mls = ""
-    
-    func c() {
-        
-        for result in results {
-            for pin in pins {
-                
-                while pin.propertyId == result.Id {
-                    mls = result.MlsNumber!
-                }
-            }
-        }
-    }
-    
 }
 
 
@@ -213,7 +198,8 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
                                                              agentName: propertyDetail.Individual?[0].Name ?? "",
                                                              agentPhone: propertyDetail.Individual?[0].Phones?[0].PhoneNumber ?? "",
                                                              agentCompanyLogo: propertyDetail.Individual?[0].Organization.Logo ?? "",
-                                                             agentCompany: propertyDetail.Individual?[0].Organization.Name ?? ""
+                                                             agentCompany: propertyDetail.Individual?[0].Organization.Name ?? "",
+                                                             areaCode: propertyDetail.Individual?[0].Phones?[0].AreaCode ?? ""
                                                             ))
                     self.navigationController?.pushViewController(vc, animated: true)
                 }

@@ -207,7 +207,8 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
                                                              agentName: MLSResult[0].Individual?[0].Name ?? "",
                                                              agentPhone: MLSResult[0].Individual?[0].Phones?[0].PhoneNumber ?? "",
                                                              agentCompanyLogo: MLSResult[0].Individual?[0].Organization.Logo ?? "",
-                                                             agentCompany: MLSResult[0].Individual?[0].Organization.Name ?? ""
+                                                             agentCompany: MLSResult[0].Individual?[0].Organization.Name ?? "",
+                                                             areaCode: MLSResult[0].Individual?[0].Phones?[0].AreaCode ?? ""
                                                             ))
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }

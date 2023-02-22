@@ -13,7 +13,6 @@ struct TitlePreviewViewModel {
     let price: String
     let address: String
     let bedroomNum: String
-//    let bathroom: String
     let propertyInfoDetailes: String
     let MlsNumber: String
     let bathroom: String
@@ -22,5 +21,5 @@ struct TitlePreviewViewModel {
     let agentPhone: String
     let agentCompanyLogo: String
     let agentCompany: String
-    
+    let areaCode: String
 }

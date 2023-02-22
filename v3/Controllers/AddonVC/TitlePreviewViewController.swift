@@ -51,12 +51,12 @@ class TitlePreviewViewController: UIViewController {
         return imageView
     }()
     
-    private let shareIcon: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(systemName: "square.and.arrow.up")
-        return imageView
-    }()
+//    private let shareIcon: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        imageView.image = UIImage(systemName: "square.and.arrow.up")
+//        return imageView
+//    }()
     
     private let FavourtieLable: UILabel = {
         let label = UILabel()
@@ -206,6 +206,21 @@ class TitlePreviewViewController: UIViewController {
     }()
     
     
+    private let areaCode: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        return label
+    }()
+    
+    private let wholePhone: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        return label
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -252,12 +267,12 @@ class TitlePreviewViewController: UIViewController {
         ]
         
         
-        let shareIconConstrains = [
-            shareIcon.topAnchor.constraint(equalTo: propertyImage.bottomAnchor, constant: 20),
-            shareIcon.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -50),
-            shareIcon.heightAnchor.constraint(equalToConstant: 30),
-            shareIcon.widthAnchor.constraint(equalToConstant: 30)
-        ]
+//        let shareIconConstrains = [
+//            shareIcon.topAnchor.constraint(equalTo: propertyImage.bottomAnchor, constant: 20),
+//            shareIcon.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -50),
+//            shareIcon.heightAnchor.constraint(equalToConstant: 30),
+//            shareIcon.widthAnchor.constraint(equalToConstant: 30)
+//        ]
         
         let priceLabelConstrains = [
             priceLabel.topAnchor.constraint(equalTo: favouriteIcon.bottomAnchor, constant: 20),
@@ -351,14 +366,20 @@ class TitlePreviewViewController: UIViewController {
             agentName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
         ]
         
-        let agentPhoneConstrains = [
-            agentPhone.topAnchor.constraint(equalTo: agentName.bottomAnchor, constant: 30),
-            agentPhone.leadingAnchor.constraint(equalTo: agentImage.trailingAnchor, constant: 30),
-            agentPhone.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
+//        let agentPhoneConstrains = [
+//            agentPhone.topAnchor.constraint(equalTo: agentName.bottomAnchor, constant: 30),
+//            agentPhone.leadingAnchor.constraint(equalTo: agentImage.trailingAnchor, constant: 30),
+//            agentPhone.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
+//        ]
+        
+        let wholePhoneConstrains = [
+            wholePhone.topAnchor.constraint(equalTo: agentName.bottomAnchor, constant: 20),
+            wholePhone.leadingAnchor.constraint(equalTo: agentImage.trailingAnchor, constant: 30),
+            wholePhone.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
         ]
         
         let agentCompanyLogoConstrains = [
-            agentCompanyLogo.topAnchor.constraint(equalTo: agentImage.bottomAnchor, constant: 60),
+            agentCompanyLogo.topAnchor.constraint(equalTo: agentImage.bottomAnchor, constant: 50),
             agentCompanyLogo.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             agentCompanyLogo.heightAnchor.constraint(equalToConstant: 300),
             agentCompanyLogo.widthAnchor.constraint(equalToConstant: 300)
@@ -374,7 +395,7 @@ class TitlePreviewViewController: UIViewController {
         
         contentView.addSubview(propertyImage)
         contentView.addSubview(favouriteIcon)
-        contentView.addSubview(shareIcon)
+//        contentView.addSubview(shareIcon)
         contentView.addSubview(priceLabel)
         contentView.addSubview(addressLabel)
         contentView.addSubview(BedroomIcon)
@@ -393,9 +414,10 @@ class TitlePreviewViewController: UIViewController {
         contentView.addSubview(agentInfo)
         contentView.addSubview(agentImage)
         contentView.addSubview(agentName)
-        contentView.addSubview(agentPhone)
+//        contentView.addSubview(agentPhone)
         contentView.addSubview(agentCompanyLogo)
         contentView.addSubview(agentCompany)
+        contentView.addSubview(wholePhone)
         
         
         
@@ -409,7 +431,7 @@ class TitlePreviewViewController: UIViewController {
         
         NSLayoutConstraint.activate(propertyImageConstrains)
         NSLayoutConstraint.activate(favouriteIconConstrains)
-        NSLayoutConstraint.activate(shareIconConstrains)
+//        NSLayoutConstraint.activate(shareIconConstrains)
         NSLayoutConstraint.activate(priceLabelConstrains)
         NSLayoutConstraint.activate(addressLabelConstrains)
         
@@ -433,9 +455,10 @@ class TitlePreviewViewController: UIViewController {
         NSLayoutConstraint.activate(agentInfoConstrains)
         NSLayoutConstraint.activate(agentImageConstrains)
         NSLayoutConstraint.activate(agentNameConstrains)
-        NSLayoutConstraint.activate(agentPhoneConstrains)
+//        NSLayoutConstraint.activate(agentPhoneConstrains)
         NSLayoutConstraint.activate(agentCompanyLogoConstrains)
         NSLayoutConstraint.activate(agentCompanyConstrains)
+        NSLayoutConstraint.activate(wholePhoneConstrains)
         
         
         
@@ -449,8 +472,6 @@ class TitlePreviewViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(favouriteIconTapped))
         favouriteIcon.isUserInteractionEnabled = true
         favouriteIcon.addGestureRecognizer(tapGesture)
-        
-        
     }
     
     
@@ -491,7 +512,7 @@ class TitlePreviewViewController: UIViewController {
         favouriteIcon.image = UIImage(systemName: "heart.fill")!.withTintColor(.red, renderingMode: .alwaysOriginal)
         //        FavourtieLable.text = "Favourtie"
         
-        shareIcon.image = UIImage(systemName: "square.and.arrow.up")
+//        shareIcon.image = UIImage(systemName: "square.and.arrow.up")
         
         priceLabel.text = model.price
         
@@ -525,6 +546,10 @@ class TitlePreviewViewController: UIViewController {
         agentName.text = model.agentName
         
         agentPhone.text = model.agentPhone
+        
+        areaCode.text = model.areaCode
+        
+        wholePhone.text = model.areaCode + "-" + model.agentPhone
         
         guard let url = URL(string: model.agentCompanyLogo) else {return}
         agentCompanyLogo.sd_setImage(with: url)
