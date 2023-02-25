@@ -15,7 +15,7 @@ enum APIError: Error {
 class APICaller {
     static let shared = APICaller()
     
-    let apiKey = "53294f5dccmsh1441fa14fc4456dp1b1d97jsnc612376d341e"
+    let apiKey = ""
     
     //To refer to the built in Result type, you can either rename your struct to something else, or you qualify it with Swift.Result:
     //https://stackoverflow.com/questions/67656782/cannot-specialize-non-generic-type-result
