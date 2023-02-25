@@ -9,12 +9,14 @@
 
 ## by calling api from https://rapidapi.com/apidojo/api/realty-in-ca1
 
-## mapkit
+Use the Real Estate API to fetch data about properties in Canada. do this by making HTTP requests to the API endpoints using your API key.
 
-## save info to core data
+Use MapKit to display a map with the location of the properties. use the latitude and longitude data from the API response to display pins on the map.
 
-## tableView
+Use Core Data to save information about the properties locally on the device. You can create a data model with entities and attributes that match the data from the API response. Then, use Core Data's managed object context to insert, fetch and delete records.
 
-## scrollView
+Use UITableView to display a list of the properties. create a custom table view cell that displays the property's address, price, and other details. Then, you can use a UITableViewDataSource and UITableViewDelegate to populate the table view with data and handle user interactions.
 
-## UIKit programmatic UI
+Use UIScrollView to allow users to scroll through the list of properties or zoom in and out of the map. embed the UITableView and MapKit views inside a UIScrollView and set its content size and zoom scale.
+
+Use programmatic UI with UIKit to create a custom user interface. create views, buttons, labels, and other UI elements programmatically instead of using Interface Builder. This can give you more control over the layout and behavior of your app.
